@@ -67,3 +67,9 @@ if (text.substr(i,1) === "a" || text.substr(i,1) === "e" || text.substr(i,1) ===
 document.write(text.substr(i,1);
 }
 }*/
+
+//11. Escribe un programa que pida una frase y escriba cuántas de las letras que tiene son
+//vocales
+let text = prompt('Escribe una frase');
+var numeroVocales = text.match(/[aeiou]/gi).length;
+document.write(numeroVocales);
