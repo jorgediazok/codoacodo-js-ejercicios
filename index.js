@@ -19,6 +19,27 @@
 
 //5. Escribe un programa de tres líneas que pida un número, pida otro número y escriba el
 //resultado de sumar estos dos números.
-//let num1 = prompt(parseFloat('Tell me a number'));
-//let num2 = prompt(parseFloat('Now tell me another number'));
-//document.write(num1 + num2);
+//let num1 = prompt('Escribe un número');
+//let num2 = prompt('Escribe otro número');
+//document.write('La suma es: ' + (parseInt(num1) + parseInt(num2)));
+
+//6. Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor
+/*let num1 = prompt('Escribe un número');
+let num2 = prompt('Escribe otro número');
+if (num1 > num2) {
+  document.write(num1);
+} else {
+  document.write(num2);
+}*/
+
+//7.- Escribe un programa que pida 3 números y escriba en la pantalla el mayor de los tres.
+/*let num1 = prompt('Escribe un número');
+let num2 = prompt('Escribe otro número');
+let num3 = prompt('Escribí un tercer número');
+if (num1 > num2 && num1 > num3) {
+  document.write(num1);
+} else if (num2 > num1 && num2 > num3) {
+  document.write(num2);
+} else {
+  document.write(num3);
+}*/
