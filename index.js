@@ -277,3 +277,17 @@ function firstLetterToUppercase(phrase) {
 }
 
 console.log(firstLetterToUppercase(game));*/
+
+//Ejercicio 11: escriba una función de JavaScript que busque la palabra más larga de una frase.
+//Por ejemplo, si x = "Tutorial de desarrollo web", el resultado debería ser "Desarrollo".
+
+/*let phrase = 'Tutorial de desarrollo web';
+
+function searchLargerWord(str) {
+  let longestWord = str.split(' ').sort(function (a, b) {
+    return b.length - a.length;
+  });
+  return longestWord[0];
+}
+
+console.log(searchLargerWord(phrase));*/
