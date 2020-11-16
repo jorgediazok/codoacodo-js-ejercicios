@@ -147,3 +147,78 @@ if (numPrimo) {
 } else {
   document.write('el número no es primo');
 }*/
+
+/*EJERCICIOS CON STRING Y ARRAY */
+//Ejercicio 1: cree un array con todas las edades de los estudiantes de su clase.
+// Itere el array utilizando un bucle while y luego imprima todas las edades en la consola.
+
+/*let ages = [18, 19, 22, 25, 28, 30, 31, 33, 35, 39];
+let i = 0;
+
+while (i < ages.length) {
+  i++;
+  console.log(ages[i]);
+}*/
+
+//Ejercicio 2: Al ejercicio 1 agregue un condicional dentro del ciclo while para imprimir solo
+//números pares. Cambie el ciclo para usar un ciclo "for" en lugar de un ciclo "while".
+
+/*let ages = [17, 19, 22, 25, 28, 30, 31, 33, 35, 39, 48];
+let i = 0;
+
+while (i < ages.length) {
+  i++;
+  if (ages[i] % 2 === 0) {
+    console.log(ages[i]);
+  }
+}*/
+
+/*//Ejercicio 3: escriba una función que reciba un array como parámetro e imprima el número
+//más bajo de la array en la consola
+
+function arrayMasBajo(array) {
+  const arrayOrdenado = array.sort((a, b) => a - b);
+  console.log(arrayOrdenado[0]);
+}
+
+//Ejercicio 4: escriba una función que reciba un array como parámetro e imprima el número
+//más grande de la array en la consola.
+function arrayMasAlto(array) {
+  const arrayOrdenado = array.sort((a, b) => b - a);
+  console.log(arrayOrdenado[0]);
+}
+
+const resultado = arrayMasBajo([40, 10, 30, 20, 25]);
+const resultado2 = arrayMasAlto([25, 55, 38, 80, 12]);
+*/
+
+//Ejercicio 5: Escriba una función que reciba dos parámetros, una array y un índice. La
+//función imprimirá el valor del elemento en la posición dada (basado en uno) en la consola.
+
+/*var array = [3, 6, 67, 6, 23, 0, 17];
+var index = 1;
+
+function arrayIndex(array, index) {
+  const resultado = array[index];
+  return resultado;
+}
+console.log(arrayIndex(array, index));*/
+
+//Ejercicio 6: Escriba una función que reciba una array y solo imprima los valores que se
+//repiten.
+
+const findDuplicates = (arr) => {
+  let sorted_arr = arr.slice().sort();
+  let results = [];
+  for (let i = 0; i < sorted_arr.length - 1; i++) {
+    if (sorted_arr[i + 1] == sorted_arr[i]) {
+      results.push(sorted_arr[i]);
+    }
+  }
+  return results;
+};
+
+let duplicatedArray = [9, 9, 111, 2, 3, 4, 4, 5, 7];
+console.log(
+  `The duplicates in ${duplicatedArray} are ${findDuplicates(duplicatedArray)}`
+);
