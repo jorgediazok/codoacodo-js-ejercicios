@@ -232,3 +232,48 @@ function unirElementos(elementos) {
   return result;
 }
 console.log(unirElementos(myColor));*/
+
+//Ejercicio 8: escriba una función de JavaScript que invierta un número. Por ejemplo, si x =
+//32443, la salida debería ser 34423.
+
+/*let num = 25289;
+
+function reverseNum(n) {
+  n = n + '';
+  return n.split('').reverse().join('');
+}
+
+console.log(reverseNum(num));
+
+//Da como resultado 98252*/
+
+//Ejercicio 9: escriba una función de JavaScript que devuelva una cadena en orden alfabético.
+//Por ejemplo, si x = 'webmaster', la salida debería ser 'abeemrstw'. La puntuación y los
+//números no se pasan en la cadena.
+
+//Esto se hace en 3 pasos: Convierto el string en array con el split.
+//Aplico el sort, para ordenarlo.
+//Vuelvo a convertirlo en un string con el join
+
+/*let word = 'crazymadafakka';
+
+function sortAlphabetically(palabra) {
+  return palabra.split('').sort().join('');
+}
+
+console.log(sortAlphabetically(word));*/
+
+//Ejercicio 10: escriba una función de JavaScript que convierta la primera letra de cada
+//palabra a mayúsculas. Por ejemplo, si x = "prince of persia", la salida debería ser
+//"Prince Of Persia".
+
+/*let game = 'prince of persia';
+
+function firstLetterToUppercase(phrase) {
+  return phrase
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+console.log(firstLetterToUppercase(game));*/
