@@ -207,8 +207,9 @@ console.log(arrayIndex(array, index));*/
 //Ejercicio 6: Escriba una función que reciba una array y solo imprima los valores que se
 //repiten.
 
-const findDuplicates = (arr) => {
+/*const findDuplicates = (arr) => {
   let sorted_arr = arr.slice().sort();
+  console.log(sorted_arr);
   let results = [];
   for (let i = 0; i < sorted_arr.length - 1; i++) {
     if (sorted_arr[i + 1] == sorted_arr[i]) {
@@ -219,6 +220,15 @@ const findDuplicates = (arr) => {
 };
 
 let duplicatedArray = [9, 9, 111, 2, 3, 4, 4, 5, 7];
-console.log(
-  `The duplicates in ${duplicatedArray} are ${findDuplicates(duplicatedArray)}`
-);
+console.log(`The duplicates are ${findDuplicates(duplicatedArray)}`);*/
+
+//Ejercicio 7: escriba una función de JavaScript simple para unir todos los elementos de la
+//siguiente array en una cadena.
+//Debería ver lo siguiente en su consola: "Rojo", "Verde", "Blanco", "Negro"
+
+/*let myColor = ['Red', 'Green', 'White', 'Black'];
+function unirElementos(elementos) {
+  const result = elementos.join(' , ');
+  return result;
+}
+console.log(unirElementos(myColor));*/
