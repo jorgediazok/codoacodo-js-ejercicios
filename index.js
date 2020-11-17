@@ -338,16 +338,74 @@ console.log(promedioNotas(notas));*/
 //5. Una función que se llame siguiente, que reciba como parámetro un valor entero, y
 //devuelva el siguiente del número ingresado como parámetro
 
-/*function siguiente(nextNum) {
+function siguiente(nextNum) {
   return nextNum + 1;
 }
-
-console.log(siguiente(22));*/
 
 //6. Una función que se llame doble, que reciba como parámetro un valor, y devuelva el
 //doble del número ingresado como parámetro.
 
-/*function doble(num) {
+function doble(num) {
   return num * 2;
 }
-console.log(doble(20));*/
+
+//7. Una función que se llame cuadrado, que reciba como parámetro un valor, y devuelva el
+//valor del numero ingresado como parámetro elevado al cuadrado.
+
+function cuadrado(num) {
+  let value = num * num;
+  return value;
+}
+
+//8. Una función que se denomine imprimirValores que dado un número por parámetro,
+//imprima cual es el valor siguiente, el doble y el cuadrado. Usando las funciones definidas
+//en los puntos 5) , 6) y 7) : siguiente, el doble y el cuadrado.
+
+function imprimirValores(num) {
+  let next = siguiente(num);
+  console.log(next);
+  let double = doble(num);
+  console.log(double);
+  let cuad = cuadrado(num);
+  console.log(cuad);
+}
+console.log(imprimirValores(8));
+
+//9. Una función que se denomine imprimirElDobleDelSiguiente que dado un número por
+//parámetro, imprima cual es el valor siguiente al el doble. Usando las funciones definidas
+//en los puntos 5) , 6) : siguiente, el doble .
+
+function imprimirElDobleDelSiguiente(num) {
+  let next = siguiente(num);
+  let doubleOfNext = next * 2;
+  return doubleOfNext;
+}
+
+console.log(imprimirElDobleDelSiguiente(10));
+
+//10. Una función que se denomine imprimirElDobleDelSiguienteAlCuadrado que dado un
+//número por parámetro, imprima cual es el valor siguiente al el doble. Usando las
+//funciones definidas en los puntos 5) , 6) y 7) : siguiente, el doble y el cuadrado
+
+function imprimirElDobleDelSiguienteAlCuadrado(num) {
+  let next = siguiente(num);
+  let doubleOfNext = next * 2;
+  let powOfNext = doubleOfNext * doubleOfNext;
+  return powOfNext;
+}
+console.log(imprimirElDobleDelSiguienteAlCuadrado(10));
+
+//11 una función que dado la longitud de un lado de un cuadrado devuelva el perímetro
+function perimetroDeUnCuadrado(long) {
+  let perimetro = long * 4;
+  return perimetro;
+}
+console.log(perimetroDeUnCuadrado(10)); //Debería devolver 16
+
+// 12. una función que dado la longitud de un lado de un cuadrado devuelva la superficie.
+
+function superficieDeUnCuadrado(long) {
+  let superficie = long * long;
+  return superficie;
+}
+console.log(superficieDeUnCuadrado(5));
