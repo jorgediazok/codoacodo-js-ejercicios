@@ -307,7 +307,17 @@ console.log(cursoFullStack(mensaje, 3));*/
 
 //2. Diseñar una función que tenga como parámetros dos números, y que calcule el máximo.
 
-function calculateMax(num1, num2) {
+/*function calculateMax(num1, num2) {
   num1 > num2 ? console.log(num1) : console.log(num2);
 }
-calculateMax(10, 20);
+calculateMax(10, 20);*/
+
+//3. Crear una función que se llame promedio3, que reciba como parámetro tres valores y
+// devuelva el promedio de los mismos.
+
+function promedio3(num1, num2, num3) {
+  let sum = num1 + num2 + num3;
+  let avg = sum / 3;
+  return avg;
+}
+console.log(promedio3(10, 20, 30));
