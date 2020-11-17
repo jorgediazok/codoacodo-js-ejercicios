@@ -328,11 +328,26 @@ console.log(promedio3(10, 20, 30));*/
 /*let notas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function promedioNotas(nota) {
-  for (let i = 10; i >= 1; i--) {
-    let sum = nota.reduce((previous, current) => (current += previous));
-    let avg = sum / nota.length;
-    return avg;
-  }
+  let sum = nota.reduce((previous, current) => (current += previous));
+  let avg = sum / nota.length;
+  return avg;
 }
 
 console.log(promedioNotas(notas));*/
+
+//5. Una función que se llame siguiente, que reciba como parámetro un valor entero, y
+//devuelva el siguiente del número ingresado como parámetro
+
+/*function siguiente(nextNum) {
+  return nextNum + 1;
+}
+
+console.log(siguiente(22));*/
+
+//6. Una función que se llame doble, que reciba como parámetro un valor, y devuelva el
+//doble del número ingresado como parámetro.
+
+/*function doble(num) {
+  return num * 2;
+}
+console.log(doble(20));*/
