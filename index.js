@@ -315,9 +315,24 @@ calculateMax(10, 20);*/
 //3. Crear una función que se llame promedio3, que reciba como parámetro tres valores y
 // devuelva el promedio de los mismos.
 
-function promedio3(num1, num2, num3) {
+/*function promedio3(num1, num2, num3) {
   let sum = num1 + num2 + num3;
   let avg = sum / 3;
   return avg;
 }
-console.log(promedio3(10, 20, 30));
+console.log(promedio3(10, 20, 30));*/
+
+//4. Crear una función que lea notas hasta que ingrese -1 y devuelve el promedio de las
+//notas leídas. ( aunque no se suele leer valores en una función)
+
+/*let notas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function promedioNotas(nota) {
+  for (let i = 10; i >= 1; i--) {
+    let sum = nota.reduce((previous, current) => (current += previous));
+    let avg = sum / nota.length;
+    return avg;
+  }
+}
+
+console.log(promedioNotas(notas));*/
