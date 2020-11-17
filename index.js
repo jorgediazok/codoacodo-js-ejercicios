@@ -409,3 +409,60 @@ function superficieDeUnCuadrado(long) {
   return superficie;
 }
 console.log(superficieDeUnCuadrado(5));
+
+// 13. una función que dado el radio de una círculo devuelva la circunferencia ( perimetro del
+//circulo)
+
+function perimetroDeUnCirculo(radio) {
+  let perimetro = 2 * Math.PI * radio;
+  return perimetro;
+}
+console.log(perimetroDeUnCirculo(10));
+
+// 14. una función que dado el radio de una círculo devuelva el area del circulo
+
+function areaDeUnCirculo(radio) {
+  let area = Math.PI * (radio * radio);
+  return area;
+}
+console.log(areaDeUnCirculo(10));
+
+// FUNCIONES FECHA
+
+//15. una función que dado un número de mes me devuelva la cantidad de días de ese
+//mes(suponiendo que no es un año bisiesto)
+
+function diasDelMes(año, mes) {
+  return new Date(año, mes, 0).getDate();
+}
+console.log(diasDelMes(2, 2021));
+
+//16. Una función que reciba como parámetro un año y diga si ese año es bisiesto (googlear
+//cuando un año es bisiesto)
+
+function esBisiesto(año) {
+  let bisiesto = !(new Date(año, 1, 29).getMonth() - 1);
+  return bisiesto;
+}
+
+console.log(esBisiesto(2024));
+
+//17. una función que reciba el dia, mes y año y me devuelva la cantidad de días de ese mes
+
+//18. una función que reciba dia,mes y año y devuelva el dia siguiente
+
+// 19. una función que reciba dia,mes y año y devuelva el dia anterior
+function diaProximo(año, mes, dia) {
+  let day = new Date(año, mes, dia).toDateString();
+  let nextDay = day + 1;
+  return nextDay;
+}
+console.log(diaProximo(2020, 10, 17));
+
+//20. una función que se llame ultimoDiaDelMes que reciba díia,mes y año y devuelva el
+//último día del mes
+
+function ultimoDiaDelMes(año, mes) {
+  return new Date(año, mes, 0).getDate();
+}
+console.log(ultimoDiaDelMes(2020, 11));
