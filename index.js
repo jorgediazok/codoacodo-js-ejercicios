@@ -304,3 +304,10 @@ function cursoFullStack(string, n) {
 }
 
 console.log(cursoFullStack(mensaje, 3));*/
+
+//2. Diseñar una función que tenga como parámetros dos números, y que calcule el máximo.
+
+function calculateMax(num1, num2) {
+  num1 > num2 ? console.log(num1) : console.log(num2);
+}
+calculateMax(10, 20);
