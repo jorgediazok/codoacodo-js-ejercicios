@@ -338,7 +338,7 @@ console.log(promedioNotas(notas));*/
 //5. Una función que se llame siguiente, que reciba como parámetro un valor entero, y
 //devuelva el siguiente del número ingresado como parámetro
 
-function siguiente(nextNum) {
+/*function siguiente(nextNum) {
   return nextNum + 1;
 }
 
@@ -466,3 +466,13 @@ function ultimoDiaDelMes(año, mes) {
   return new Date(año, mes, 0).getDate();
 }
 console.log(ultimoDiaDelMes(2020, 11));
+*/
+
+//Numeros dobles
+/*let numeros = [10, 20, 30, 40, 50];
+
+let numerosDobles = numeros.map((numero) => {
+  return numero * 2;
+});
+
+console.log(numerosDobles);*/
