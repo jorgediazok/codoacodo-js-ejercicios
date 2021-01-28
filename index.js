@@ -631,3 +631,13 @@ console.log(filteredArray); */
 
 //Exercise 7: Write a JS program to concatenate two strings except their
 //First character
+
+// const concatenate = (str1, str2) => str1.slice(1) + str2.slice(1);
+// console.log(concatenate('junior', 'developer'));
+
+//Exercise 4: Given two values, write a JS program to find out which one is
+//nearest to 100
+
+// const closeTo100 = (a, b) => (100 - a < 100 - b ? a : b);
+
+// console.log(closeTo100(20, 10));
