@@ -880,3 +880,239 @@ console.log(filteredArray); */
 
 // console.log(webTechs.join()); // "HTML,CSS,JavaScript,React,Redux,Node,MongoDB"
 // console.log(webTechs.join(' # ')); // "HTML # CSS # JavaScript # React # Redux # Node # MongoDB"
+
+//SLICE Slice: To cut out a multiple items in range.
+//It takes two parameters:starting and ending position. It doesn't include the ending position.
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers.slice()); // -> it copies all  item
+// console.log(numbers.slice(0)); // -> it copies all  item
+// console.log(numbers.slice(0, numbers.length)); // it copies all  item
+// console.log(numbers.slice(1, 4)); // -> [2,3,4] // it doesn't include the ending position
+
+//SPLICE It takes three parameters:Starting position, number of times to
+// be removed and number of items to be added.
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers.splice()); // -> remove all items
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.splice(0, 1)); // remove the first item
+// const numbers = [1, 2, 3, 4, 5, 6];
+// console.log(numbers.splice(3, 3, 7, 8, 9)); // -> [1, 2, 3, 7, 8, 9]
+
+//PUSH push an item in the end
+
+// // syntax
+// const arr = ['item1', 'item2', 'item3'];
+// arr.push('new item');
+
+// console.log(arr);
+// // ['item1', 'item2','item3','new item']
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.push(6);
+
+// console.log(numbers); // -> [1,2,3,4,5,6]
+
+// numbers.pop(); // -> remove one item from the end
+// console.log(numbers); // -> [1,2,3,4,5]
+// let fruits = ['banana', 'orange', 'mango', 'lemon'];
+// fruits.push('apple');
+
+// console.log(fruits); // ['banana', 'orange', 'mango', 'lemon', 'apple']
+
+// fruits.push('lime');
+// console.log(fruits); // ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+
+// //POP remove item from the end
+
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.pop(); // -> remove one item from the end
+
+// console.log(numbers); // -> [1,2,3,4]
+
+// //SHIFT remove an item on the beginning
+
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.shift(); // -> remove one item from the beginning
+
+// console.log(numbers); // -> [2,3,4,5]
+
+// //UNSHIT add an item on the beginning
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.unshift(0); // -> add one item from the beginning
+
+// console.log(numbers); // -> [0,1,2,3,4,5]
+
+//REVERSE Reverse the order of an array
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.reverse(); // -> reverse array order
+
+// console.log(numbers); // [5, 4, 3, 2, 1]
+
+// numbers.reverse();
+// console.log(numbers); // [1, 2, 3, 4, 5]
+
+//SORT arrange array elements in ascending order. Sort takes a call back function,
+//we will see how we use sort with a call back function in the coming sections
+
+// const webTechs = [
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB',
+// ];
+
+// webTechs.sort();
+// console.log(webTechs); // ["CSS", "HTML", "JavaScript", "MongoDB", "Node", "React", "Redux"]
+
+// webTechs.reverse(); // after sorting we can reverse it
+// console.log(webTechs); // ["Redux", "React", "Node", "MongoDB", "JavaScript", "HTML", "CSS"]
+
+// //ARRAY OF ARRAY
+
+// const firstNums = [1, 2, 3];
+// const secondNums = [1, 4, 9];
+
+// const arrayOfArray = [
+//   [1, 2, 3],
+//   [1, 2, 3],
+// ];
+// console.log(arrayOfArray[0]); // [1, 2, 3]
+
+// const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
+// const backEnd = ['Node', 'Express', 'MongoDB'];
+// const fullStack = [frontEnd, backEnd];
+// console.log(fullStack); // [["HTML", "CSS", "JS", "React", "Redux"], ["Node", "Express", "MongoDB"]]
+// console.log(fullStack.length); // 2
+// console.log(fullStack[0]); // ["HTML", "CSS", "JS", "React", "Redux"]
+// console.log(fullStack[1]); // ["Node", "Express", "MongoDB"]
+
+//Exercise
+
+// const countries = [
+//   'Albania',
+//   'Bolivia',
+//   'Canada',
+//   'Denmark',
+//   'Ethiopia',
+//   'Finland',
+//   'Germany',
+//   'Hungary',
+//   'Ireland',
+//   'Japan',
+//   'Kenya',
+// ];
+
+// const webTechs = [
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB',
+// ];
+
+// //1 Declare an empty array
+
+// let array = [];
+
+// //2 Declare an array with more than 5 number of elements
+
+// let arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7];
+
+// //3 Find the length of the array
+
+// console.log(arrayOfNumbers.length);
+
+// //4 Get the first item, the middle item and the last item of the array
+// const firstItem = arrayOfNumbers[0];
+// const middleItem = arrayOfNumbers[3];
+// const finalItem = arrayOfNumbers.length;
+
+// console.log(firstItem, middleItem, finalItem);
+
+// //5 Declare an array called mixedDataTypes, put different data types in the array
+// //and find the length of the array. The array size should be greater than 5
+
+// const mixedDataTypes = [13, false, 'Holly', undefined, true, 'warning'];
+// console.log(mixedDataTypes.length);
+
+// //6 Declare an array variable name itCompanies and assign initial values Facebook,
+// // Google, Microsoft, Apple, IBM, Oracle and Amazon
+
+// let itCompanies = ['Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+
+// //7 Print the array using console.log()
+// console.log(itCompanies);
+
+// //8 Print the number of companies in the array
+// console.log(itCompanies.length);
+
+// //9 Print the first company, middle and last company
+// console.log(itCompanies[0]);
+// console.log(itCompanies[2]);
+// console.log(itCompanies[5]);
+
+// //10 Print out each company
+// console.log(itCompanies.toString());
+
+// //12 Print the array like as a sentence: Facebook, Google, Microsoft, Apple,
+// // IBM,Oracle and Amazon are big IT companies.
+
+// let stringCompanies = itCompanies.toString();
+// console.log(stringCompanies + ' are big IT companies');
+
+// //13 Check if a certain company exists in the itCompanies array.
+// //If it exist return the company else return a company is not found
+
+// // let index = itCompanies.indexOf('Google');
+
+// // index != -1
+// //   ? console.log('This compnay exists in the array')
+// //   : console.log('This company does not exist in the array');
+
+// // //14 Sort companies
+
+// // //const sortCompanies = itCompanies.sort();
+// // console.log(sortCompanies);
+
+// // //15 Reverse the array using reverse() method
+
+// // const reversed = sortCompanies.reverse();
+// // console.log(reversed);
+
+// //16 Slice out the first 3 companies from the array
+
+// const slicedCompanies = itCompanies.slice(3, 6);
+// console.log(slicedCompanies);
+
+// //17 Slice out the last 3 companies from the array
+// const slicedCopanies2 = itCompanies.slice(0, 3);
+// console.log(slicedCopanies2);
+
+// //18 Slice out the middle IT company or companies from the array
+// const slicedCompanies3 = itCompanies.slice(2, 4);
+// console.log(slicedCompanies3);
+
+// //19 Remove the first IT company from the array
+// // const removedCompany = itCompanies.shift(0);
+// // console.log(itCompanies);
+
+// //20 Remove the middle IT company or companies from the array
+// const removedMiddleCompany = itCompanies[2];
+// console.log(removedMiddleCompany);
+// console.log(itCompanies);
+
+// //21 Remove the last IT company from the array
+// // const removedLast = itCompanies.pop();
+// // console.log(itCompanies);
+
+// //22 Remove all IT companies
+// const removeAll = itCompanies.splice(0, 6);
+// console.log(itCompanies);
