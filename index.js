@@ -578,8 +578,18 @@ console.log(filteredArray); */
 //Exercise 3: Write a JS program to replace every character in a given
 //string with the character following it in the alphabet!!
 
-//Split me separa los caracteres de un array
+//Split me separa los caracteres de un array "h" "e" "l" "l""o"
+//Con el map loopeo en ese array de caracteres y por cada caracter
+//chequeo con el String.fromCharCode que numero representa la letra, por
+//ejemplo la A es 65, la B 66. Con el charCodeAt(0) elijo el string y le
+//sumo uno. Finalmente uno el string de nuevo con join.
 
-const moveCharsForward = (str) => str.split('');
+// const moveCharsForward = (str) =>
+//   str
+//     .split('')
+//     .map((char) => String.fromCharCode(char.charCodeAt(0) + 1))
+//     .join();
 
-console.log(moveCharsForward('hello'));
+// console.log(moveCharsForward('hello'));
+
+//Exercise 4
