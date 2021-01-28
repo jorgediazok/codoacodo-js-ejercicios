@@ -555,3 +555,31 @@ console.log(filteredArray); */
 // const stringPerson = JSON.stringify(person2);
 // console.log(stringPerson);
 // //Devuelve un JSON
+
+//BEGINNING OF NEW EXERCISES ON JANUARY
+//https://www.youtube.com/watch?v=N65RvNkZFGE&list=PLpc_YvcwbxaSn6jn0VaTcG8A0Grgs1GSB&ab_channel=JuniorDeveloperCentral
+
+//Exercise 1: Escribir un programa de js que chequee dos numeros que retorne
+//true si uno de los dos es 100 o si la suma de los dos es 100
+
+// const isEqualTo100 = (a, b) => a === 100 || b === 100 || a + b === 100;
+
+// console.log(isEqualTo100(100, 10)); //true
+// console.log(isEqualTo100(25, 13)); //false
+// console.log(isEqualTo100(20 + 80)); //true
+// console.log(isEqualTo100(20 + 70)); //false
+
+//Exercise 2: Write a JS program to get the extension of a filename
+
+// const getFileExtension = (str) => str.slice(str.lastIndexOf('.'));
+
+// console.log(getFileExtension('index.html'));
+
+//Exercise 3: Write a JS program to replace every character in a given
+//string with the character following it in the alphabet!!
+
+//Split me separa los caracteres de un array
+
+const moveCharsForward = (str) => str.split('');
+
+console.log(moveCharsForward('hello'));
