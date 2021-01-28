@@ -476,3 +476,82 @@ let numerosDobles = numeros.map((numero) => {
 });
 
 console.log(numerosDobles);*/
+
+/* let num = 12;
+
+if (num <= 15) {
+  console.log(`${num} es menor o igual a 15`);
+} else {
+  console.log(`${num} es mayor a 15`);
+} */
+
+// function myFunction(a, b) {
+//   return a * b;
+// }
+
+// var x = myFunction(myFunction(4, 3), myFunction(4, 3));
+
+// console.log(x);
+
+// for (var j = 0; j < 2; j++) {}
+
+// console.log(j);
+/* 
+let x = 10;
+
+const promise = new Promise((resolve, reject) => {
+  if (x === 20) {
+    resolve('La variable es igual a 20');
+  } else {
+    reject('La variable no es igual a 20');
+  }
+})
+  .then((res) => {
+    console.log('success ' + res);
+  })
+  .catch((error) => {
+    console.log('error:' + error);
+  });
+ */
+/* 
+fetch('https://randomuser.me/api/')
+  .then((response) => response.json())
+  .then((data) => console.log(data.results))
+  .catch((error) => console.log(error));
+ */
+/* 
+let myFunction = (age) => {
+  const isAdult = age >= 18 ? 'The person is Adult' : 'The person is underage';
+  console.log(isAdult);
+};
+
+myFunction(17);
+//Devuelve "The person is underage"
+ */
+
+/* const arrayOfNumbers = [7, 9, 14, 28, 10, 87, 91];
+
+const newArray = arrayOfNumbers.map((number) => {
+  return number * 10;
+});
+
+console.log(arrayOfNumbers);
+console.log(newArray);
+
+//Devuelve el mismo dos arrays , el primero sigue
+//manteniendo los números y el nuevo los multiplica x 10
+
+const filteredArray = arrayOfNumbers.filter((number) => {
+  return number >= 14;
+});
+
+console.log(filteredArray); */
+// let person = '{"name":"Alejandro", "age":25, "city":"Buenos Aires"}';
+// const parsedPerson = JSON.parse(person);
+// console.log(parsedPerson.name);
+
+// //Devuelve "Alejandro"
+// let person2 = { name: 'Juan', age: 43, city: 'Barcelona' };
+// const stringPerson = JSON.stringify(person2);
+// console.log(stringPerson);
+// //Devuelve un JSON
