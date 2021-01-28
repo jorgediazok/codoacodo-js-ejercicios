@@ -641,3 +641,35 @@ console.log(filteredArray); */
 // const closeTo100 = (a, b) => (100 - a < 100 - b ? a : b);
 
 // console.log(closeTo100(20, 10));
+
+//Exercise 5: Write a JS program to check a given string contains
+//2 to 4 occurrences of a specified character.
+
+// const countChars = (str, char) =>
+//   str.split('').filter((ch) => ch === char).length;
+
+// const contains2to4 = (str, char) =>
+//   countChars(str, char) >= 2 && countChars(str, char) <= 4;
+
+// console.log(countChars('hello', 'l'));
+// console.log(contains2to4('hello', 'l'));
+
+//Rellena un array con los numeros del 1 al 10. Muestralo por consola.
+
+// let array = [];
+// // for (i = 1; i <= 10; i++) {
+// //   array.push(i);
+// // }
+// // console.log(array);
+
+// //Rellena un array con numeros aleatorios (10 por ejemñplo).
+
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   array.push(getRandomInt(1, 100));
+// }
+
+// console.log(array);
