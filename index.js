@@ -592,4 +592,42 @@ console.log(filteredArray); */
 
 // console.log(moveCharsForward('hello'));
 
-//Exercise 4
+//Exercise 4: Write a JS program to get the current date. Expected output
+//mm-dd-yyy, mm/dd/yy or dd-mm-yyyy, dd/mm/yy
+
+// const formatDate = (date = new Date()) => {
+//   const days = date.getDate();
+//   const months = date.getMonth() + 1;
+//   const years = date.getFullYear();
+//   return `${days}/${months}/${years}`;
+// };
+
+// console.log(formatDate());
+
+//Exercise 5: Write a JS program to create a new string adding "New!" in front
+//of a given string. If the given string begins with "New!" already then return
+//the original string
+
+// const addNew = (str) => (str.indexOf('New!') === 0 ? str : `New! ${str}`); //Agrega el new adelante de la palabra
+
+// console.log(addNew('New! New! Offers'));
+
+//Exercise 6: Write a JS program to create a new string from a given string taking the
+//first 3 characters and the last 3 characters of a string and adding
+//them together. The string length must be 3 or more, if not, the original
+//string is returned
+
+// const makeNewString = (str) =>
+//   str.length < 3 ? str : str.slice(0, 3) + str.slice(-3);
+
+// console.log(makeNewString('maradona'));
+
+//Exercise 7: Write a JS program to extract the first half of a
+//string of even length
+
+// const firstHalf = (str) => str.slice(0, str.length / 2);
+
+// console.log(firstHalf('Escoliosisi')); //Returns escol
+
+//Exercise 7: Write a JS program to concatenate two strings except their
+//First character
