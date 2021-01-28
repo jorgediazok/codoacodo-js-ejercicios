@@ -673,3 +673,110 @@ console.log(filteredArray); */
 // }
 
 // console.log(array);
+
+// let palabra = 'Hello World';
+
+// let arrayIndex = palabra.indexOf('World');
+
+// console.log(arrayIndex);
+
+// const numbers = [0, 3.14, 9.81, 37, 98.6, 100]; // array of numbers
+// const fruits = ['banana', 'orange', 'mango', 'lemon']; // array of strings, fruits
+// const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']; // array of strings, vegetables
+// const animalProducts = ['milk', 'meat', 'butter', 'yoghurt']; // array of strings, products
+// const webTechs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']; // array of web technologies
+// const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Argentina']; // array of strings, countries
+
+// // Print the array and its length
+
+// console.log('Numbers:', numbers);
+// console.log('Number of numbers:', numbers.length);
+
+// console.log('Fruits:', fruits);
+// console.log('Number of fruits:', fruits.length);
+
+// console.log('Vegetables:', vegetables);
+// console.log('Number of vegetables:', vegetables.length);
+
+// console.log('Animal products:', animalProducts);
+// console.log('Number of animal products:', animalProducts.length);
+
+// console.log('Web technologies:', webTechs);
+// console.log('Number of web technologies:', webTechs.length);
+
+// console.log('Countries:', countries);
+// console.log('Number of countries:', countries.length);
+
+// let companiesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+// const companies = companiesString.split(',');
+
+// console.log(companies); //
+
+// let txt =
+//   'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+// const words = txt.split(' ');
+// console.log(words);
+
+// const numbers = [1, 2, 3, 4, 5];
+// numbers[0] = 10; // changing 1 at index 0 to 10
+// numbers[1] = 20; // changing  2 at index 1 to 20
+
+// console.log(numbers); // [10, 20, 3, 4, 5]
+
+//HERE GOES ALL THE METHODS
+
+//SPLIT
+let js = 'JavaScript';
+const charsInJavaScript = js.split('');
+
+console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+let companiesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+const companies = companiesString.split(',');
+
+console.log(companies); // ["Facebook", " Google", " Microsoft", " Apple", " IBM", " Oracle", " Amazon"]
+let txt =
+  'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+const words = txt.split(' ');
+
+//ARRAY
+
+const arr = Array(); // creates an an empty array
+console.log(arr);
+
+const eightXvalues = Array(8).fill('X'); // it creates eight element values filled with 'X'
+console.log(eightXvalues); // ['X', 'X','X','X','X','X','X','X']
+
+const eight0values = Array(8).fill(0); // it creates eight element values filled with '0'
+console.log(eight0values); // [0, 0, 0, 0, 0, 0, 0, 0]
+
+const four4values = Array(4).fill(4); // it creates 4 element values filled with '4'
+console.log(four4values); // [4, 4, 4, 4]
+
+//CONCAT
+const firstList = [1, 2, 3];
+const secondList = [4, 5, 6];
+const thirdList = firstList.concat(secondList);
+
+console.log(thirdList); // [1, 2, 3, 4, 5, 6]
+
+const fruits = ['banana', 'orange', 'mango', 'lemon']; // array of fruits
+const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']; // array of vegetables
+const fruitsAndVegetables = fruits.concat(vegetables); // concatenate the two arrays
+
+console.log(fruitsAndVegetables);
+
+//LENGTH
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers.length); // -> 5 is the size of the array
+
+//INDEX OF indexOf:To check if an item exist in an array.
+//If it exists it returns the index else it returns -1.
+
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers.indexOf(5)); // -> 4
+console.log(numbers.indexOf(0)); // -> -1
+console.log(numbers.indexOf(1)); // -> 0
+console.log(numbers.indexOf(6)); // -> -1
