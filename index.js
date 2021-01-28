@@ -726,57 +726,157 @@ console.log(filteredArray); */
 //HERE GOES ALL THE METHODS
 
 //SPLIT
-let js = 'JavaScript';
-const charsInJavaScript = js.split('');
+// let js = 'JavaScript';
+// const charsInJavaScript = js.split('');
 
-console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+// console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
 
-let companiesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
-const companies = companiesString.split(',');
+// let companiesString = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+// const companies = companiesString.split(',');
 
-console.log(companies); // ["Facebook", " Google", " Microsoft", " Apple", " IBM", " Oracle", " Amazon"]
-let txt =
-  'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
-const words = txt.split(' ');
+// console.log(companies); // ["Facebook", " Google", " Microsoft", " Apple", " IBM", " Oracle", " Amazon"]
+// let txt =
+//   'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+// const words = txt.split(' ');
 
-//ARRAY
+// //ARRAY
 
-const arr = Array(); // creates an an empty array
-console.log(arr);
+// const arr = Array(); // creates an an empty array
+// console.log(arr);
 
-const eightXvalues = Array(8).fill('X'); // it creates eight element values filled with 'X'
-console.log(eightXvalues); // ['X', 'X','X','X','X','X','X','X']
+// const eightXvalues = Array(8).fill('X'); // it creates eight element values filled with 'X'
+// console.log(eightXvalues); // ['X', 'X','X','X','X','X','X','X']
 
-const eight0values = Array(8).fill(0); // it creates eight element values filled with '0'
-console.log(eight0values); // [0, 0, 0, 0, 0, 0, 0, 0]
+// const eight0values = Array(8).fill(0); // it creates eight element values filled with '0'
+// console.log(eight0values); // [0, 0, 0, 0, 0, 0, 0, 0]
 
-const four4values = Array(4).fill(4); // it creates 4 element values filled with '4'
-console.log(four4values); // [4, 4, 4, 4]
+// const four4values = Array(4).fill(4); // it creates 4 element values filled with '4'
+// console.log(four4values); // [4, 4, 4, 4]
 
-//CONCAT
-const firstList = [1, 2, 3];
-const secondList = [4, 5, 6];
-const thirdList = firstList.concat(secondList);
+// //CONCAT
+// const firstList = [1, 2, 3];
+// const secondList = [4, 5, 6];
+// const thirdList = firstList.concat(secondList);
 
-console.log(thirdList); // [1, 2, 3, 4, 5, 6]
+// console.log(thirdList); // [1, 2, 3, 4, 5, 6]
 
-const fruits = ['banana', 'orange', 'mango', 'lemon']; // array of fruits
-const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']; // array of vegetables
-const fruitsAndVegetables = fruits.concat(vegetables); // concatenate the two arrays
+// const fruits = ['banana', 'orange', 'mango', 'lemon']; // array of fruits
+// const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']; // array of vegetables
+// const fruitsAndVegetables = fruits.concat(vegetables); // concatenate the two arrays
 
-console.log(fruitsAndVegetables);
+// console.log(fruitsAndVegetables);
 
 //LENGTH
 
-const numbers = [1, 2, 3, 4, 5];
-console.log(numbers.length); // -> 5 is the size of the array
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.length); // -> 5 is the size of the array
 
-//INDEX OF indexOf:To check if an item exist in an array.
-//If it exists it returns the index else it returns -1.
+// //INDEX OF indexOf:To check if an item exist in an array.
+// //If it exists it returns the index else it returns -1.
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-console.log(numbers.indexOf(5)); // -> 4
-console.log(numbers.indexOf(0)); // -> -1
-console.log(numbers.indexOf(1)); // -> 0
-console.log(numbers.indexOf(6)); // -> -1
+// console.log(numbers.indexOf(5)); // -> 4
+// console.log(numbers.indexOf(0)); // -> -1
+// console.log(numbers.indexOf(1)); // -> 0
+// console.log(numbers.indexOf(6)); // -> -1
+
+// let us check if a banana exist in the array
+
+// const fruits = ['banana', 'orange', 'mango', 'lemon'];
+// let index = fruits.indexOf('banana'); // 0
+
+// // if (index != -1) {
+// //   console.log('This fruit does exist in the array');
+// // } else {
+// //   console.log('This fruit does not exist in the array');
+// // }
+// // This fruit does exist in the array
+// // we can use also ternary here
+// index != -1
+//   ? console.log('This fruit does exist in the array')
+//   : console.log('This fruit does not exist in the array');
+
+// // let us check if a avocado exist in the array
+// let indexOfAvocado = fruits.indexOf('avocado'); // -1, if the element not found index is -1
+// if (indexOfAvocado != -1) {
+//   console.log('This fruit does exist in the array');
+// } else {
+//   console.log('This fruit does not exist in the array');
+// }
+// // This fruit does not exist in the array
+
+//LASTINDEX OF It gives the position of the last item in the array. If it exist, it returns the index else it returns -1.
+
+// const numbers = [1, 2, 3, 4, 5, 3, 1, 2];
+
+// console.log(numbers.lastIndexOf(2)); // 7
+// console.log(numbers.lastIndexOf(0)); // -1
+// console.log(numbers.lastIndexOf(1)); //  6
+// console.log(numbers.lastIndexOf(4)); //  3
+// console.log(numbers.lastIndexOf(6)); // -1
+
+//INCLUDES Checkea si incluye algo dentro del array y devuelve true or false
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers.includes(5)); // true
+// console.log(numbers.includes(0)); // false
+// console.log(numbers.includes(1)); // true
+// console.log(numbers.includes(6)); // false
+
+// const webTechs = [
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB',
+// ]; // List of web technologies
+
+// console.log(webTechs.includes('Node')); // true
+// console.log(webTechs.includes('C')); // false
+
+//IS ARRAY: Array.isArray:To check if the data type is an array
+
+// const numbers = [1, 2, 3, 4, 5]
+// console.log(Array.isArray(numbers)) // true
+
+// const number = 100
+// console.log(Array.isArray(number)) // false
+
+//TO STRING: Converts an array in string
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.toString()); // 1,2,3,4,5
+
+// const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+// console.log(names.toString()); // Asabeneh,Mathias,Elias,Brook
+
+//JOIN: join: It is used to join the elements of the array, the argument we passed
+// in the join method will be joined in the array and return as a string. By default,
+//it joins with a comma, but we can pass different string parameter which can be joined
+//between the items.
+
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.join()); // 1,2,3,4,5
+
+// const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+
+// console.log(names.join()); // Asabeneh,Mathias,Elias,Brook
+// console.log(names.join('')); //AsabenehMathiasEliasBrook
+// console.log(names.join(' ')); //Asabeneh Mathias Elias Brook
+// console.log(names.join(', ')); //Asabeneh, Mathias, Elias, Brook
+// console.log(names.join(' # ')); //Asabeneh # Mathias # Elias # Brook
+
+// const webTechs = [
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB',
+// ]; // List of web technologies
+
+// console.log(webTechs.join()); // "HTML,CSS,JavaScript,React,Redux,Node,MongoDB"
+// console.log(webTechs.join(' # ')); // "HTML # CSS # JavaScript # React # Redux # Node # MongoDB"
