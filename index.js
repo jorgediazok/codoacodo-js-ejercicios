@@ -1192,3 +1192,70 @@ console.log(filteredArray); */
 // num >= 18
 //   ? console.log('You are old enough to drive')
 //   : console.log('Wait until you turn 18.');
+
+//Ex 2 Compare the values of myAge and yourAge using if … else. Based on the comparison and log
+//the result to console stating
+// who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.
+
+// let myAge = 36;
+
+// let yourAge = prompt('Enter Your Age');
+
+// if (yourAge > myAge) {
+//   console.log(`You are ${yourAge - myAge} year/s older than me`);
+// } else if (yourAge < myAge) {
+//   console.log(`You are ${myAge - yourAge} year/s younger than me`);
+// } else {
+//   console.log('You are my age');
+// }
+
+//Ex 3 If a is greater than b return 'a is greater than b' else 'a is less than b'.
+// Try to implement it in two ways
+
+// a = 30;
+// b = 15;
+
+// a > b ? console.log('a is greater than b') : console.log('a is less than b');
+
+//Loops
+// for (let i = 0; i < 6; i++) {
+//   console.log(i);
+// }
+//
+
+// let sum = 0;
+// for (let i = 0; i < 10; i += 2) {
+//   sum += i;
+// }
+// console.log(sum);
+
+// //
+
+// let total = 0;
+// for (let i = 0; i < 101; i++) {
+//   if (i % 2 == 0) {
+//     total += i;
+//   }
+// }
+// console.log(total);
+
+//This code iterates through the array
+
+// const nums = [1, 2, 3, 4, 5];
+// for (let i = 0; i <= 4; i++) {
+//   console.log(nums[i]);
+// }
+
+//This code prints 5 to 0. Looping in reverse order
+
+// for (let i = 5; i >= 0; i--) {
+//   console.log(i);
+// }
+
+//WHILE We use the while loop when we do not know how man iteration we go in advance.
+
+let count = prompt('Enter a positive number: ');
+while (count > 0) {
+  console.log(count);
+  count--;
+}
