@@ -1353,3 +1353,117 @@ console.log(filteredArray); */
 // console.log(address); //['street', 'pobox', 'city']
 
 //FUNCTIONS
+// function printFullName() {
+//   let firstName = 'Asabeneh';
+//   let lastName = 'Yetayeh';
+//   let space = ' ';
+//   let fullName = firstName + space + lastName;
+//   return fullName;
+// }
+// console.log(printFullName());
+
+// function addTwoNumbers() {
+//   let numOne = 2;
+//   let numTwo = 3;
+//   let total = numOne + numTwo;
+//   return total;
+// }
+
+// console.log(addTwoNumbers());
+
+// //Con parametro
+
+// function areaOfCircle(r) {
+//   let area = Math.PI * r * r
+//   return area
+// }
+
+// console.log(areaOfCircle(10)) // should be called with one argument
+
+// function square(number) {
+//   return number * number
+// }
+
+// console.log(square(10))
+
+// const sumAllNums = (...args) => {
+//   // console.log(arguments), arguments object not found in arrow function
+//   // instead we use an a parameter followed by spread operator
+//   console.log(args)
+//  }
+
+//  sumAllNums(1, 2, 3, 4))
+//  // [1, 2, 3, 4]
+
+//Expression Function
+//Expression functions are anonymous functions.
+//After we create a function without a name and we assign it to a variable.
+//To return a value from the function we should call the variable. Look at the example below.
+
+// Function expression
+// const square = function (n) {
+//   return n * n;
+// };
+
+// console.log(square(2)); // -> 4
+
+// function generateFullName(firstName = 'Asabeneh', lastName = 'Yetayeh') {
+//   let space = ' ';
+//   let fullName = firstName + space + lastName;
+//   return fullName;
+// }
+
+// console.log(generateFullName());
+// console.log(generateFullName('David', 'Smith'));
+
+// function calculateAge(birthYear, currentYear = 2019) {
+//   let age = currentYear - birthYear;
+//   return age;
+// }
+
+// console.log('Age: ', calculateAge(1819));
+
+// const callback = (n) => {
+//   return n * 2
+// }
+// ​// function take other function as a callback
+// function cube(callback, n) {
+//   return callback(n) * n
+// }
+// ​
+// console.log(cube(callback, 3))
+
+// const evens = [0, 2, 4, 6, 8, 10];
+// const evenNumbers = [...evens];
+// const odds = [1, 3, 5, 7, 9];
+// const oddNumbers = [...odds];
+
+// const wholeNumbers = [...evens, ...odds];
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+// console.log(wholeNumbers);
+
+// We can copy an object using a spread operator
+
+// const user = {
+//   name: 'Asabeneh',
+//   title: 'Programmer',
+//   country: 'Finland',
+//   city: 'Helsinki',
+// }
+
+// const copiedUser = { ...user }
+// console.log(copiedUser)
+
+// Modifying or changing the object while copying
+
+// const user = {
+//   name: 'Asabeneh',
+//   title: 'Programmer',
+//   country: 'Finland',
+//   city: 'Helsinki',
+// }
+
+// const copiedUser = { ...user, title: 'instructor' }
+// console.log(copiedUser)
