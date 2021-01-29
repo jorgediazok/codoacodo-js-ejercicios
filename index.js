@@ -1254,8 +1254,102 @@ console.log(filteredArray); */
 
 //WHILE We use the while loop when we do not know how man iteration we go in advance.
 
-let count = prompt('Enter a positive number: ');
-while (count > 0) {
-  console.log(count);
-  count--;
-}
+// let count = prompt('Enter a positive number: ');
+// while (count > 0) {
+//   console.log(count);
+//   count--;
+// }
+
+//FOR OF
+
+// const numbers = [1, 2, 3, 4, 5];
+// for (const number of numbers) {
+//   console.log(number);
+// }
+
+// const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland'];
+// for (const country of countries) {
+//   console.log(country.toUpperCase());
+// }
+
+//FOR EACH
+//If we are interested in the index of the array forEach is preferable to for of loop.
+// The forEach array method takes a callback function,
+// //the callback function takes three arguments: the item, the index and the array itself.
+
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.forEach((number, i) => {
+//   console.log(number, i);
+// });
+
+// const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland'];
+// // countries.forEach((country, i, arr) => {
+// //   console.log(i, country.toUpperCase());
+// // });
+
+// //FOR IN
+// // const user = {
+// //   firstName: 'Asabeneh',
+// //   lastName: 'Yetayeh',
+// //   age: 250,
+// //   country: 'Finland',
+// //   skills: ['HTML', 'CSS', 'JS', 'React', 'Node', 'Python', 'D3.js'],
+// // };
+
+// // for (const key in user) {
+// //   console.log(key, user[key]);
+// // }
+
+// //OBJECTS
+
+// // const person = {
+// //   firstName: 'Asabeneh',
+// //   lastName: 'Yetayeh',
+// //   age: 250,
+// //   country: 'Finland',
+// //   city: 'Helsinki',
+// //   skills: [
+// //     'HTML',
+// //     'CSS',
+// //     'JavaScript',
+// //     'React',
+// //     'Node',
+// //     'MongoDB',
+// //     'Python',
+// //     'D3.js',
+// //   ],
+// //   isMarried: true,
+// // };
+// // console.log(person.skills[2]);
+
+// //COPY AN OBJECT WITH ASSIGN
+// const person = {
+//   firstName: 'Asabeneh',
+//   age: 250,
+//   country: 'Finland',
+//   city: 'Helsinki',
+//   skills: ['HTML', 'CSS', 'JS'],
+//   title: 'teacher',
+//   address: {
+//     street: 'Heitamienkatu 16',
+//     pobox: 2002,
+//     city: 'Helsinki',
+//   },
+//   getPersonInfo: function () {
+//     return `I am ${this.firstName} and I live in ${this.city}, ${this.country}. I am ${this.age}.`;
+//   },
+// };
+
+// // //Object methods: Object.assign, Object.keys, Object.values, Object.entries
+// // //hasOwnProperty
+
+// const copyPerson = Object.assign({}, person);
+// console.log(copyPerson);
+
+// //OBJECT KEYS: Object.keys: To get the keys or properties of an object as an array
+// const keys = Object.keys(copyPerson);
+// console.log(keys); //['name', 'age', 'country', 'skills', 'address', 'getPersonInfo']
+// const address = Object.keys(copyPerson.address);
+// console.log(address); //['street', 'pobox', 'city']
+
+//FUNCTIONS
