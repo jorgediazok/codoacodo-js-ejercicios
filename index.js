@@ -1467,3 +1467,52 @@ console.log(filteredArray); */
 
 // const copiedUser = { ...user, title: 'instructor' }
 // console.log(copiedUser)
+
+//Spread operator with arrow function
+//Whenever we like to write an arrow function which takes
+//unlimited number of arguments we use a spread operator. If we use a spread operator as a parameter,
+// the argument passed when we invoke a function will change to an array.
+
+// const sumAllNums = (...args) => {
+//   console.log(args);
+// };
+
+// sumAllNums(1, 2, 3, 4, 5);
+
+// 11. Functional Programming
+// In this article, I will try to help you to have a very good understanding of the most common feature of JavaScript, functional programming.
+
+// Functional programming allows you to write shorter code, clean code, and also to solve complicated problems which might be difficult to solve in a traditional way.
+
+// In this article we will cover all JS functional programming methods:
+
+// forEach
+// map
+// filter
+// reduce
+// find
+// findIndex
+// some
+// every
+
+// const countries = ['Finland', 'Estonia', 'Sweden', 'Norway'];
+// countries.forEach((country, i) => console.log(i, country.toUpperCase()));
+
+// const getUserInfo = (firstName, lastName, country, title, skills) => {
+//   return `${firstName} ${lastName},  a ${title} developer based in ${country}. He knows ${skills.join(
+//     ' '
+//   )} `;
+// };
+// // When we call this function we need parameters
+// const skills = ['HTML', 'CSS', 'JS', 'React'];
+// console.log(
+//   getUserInfo('Asabeneh', 'Yetayeh', 'Finland', 'FullStack Developer', skills)
+// );
+
+// const getUserInfo = (firstName, lastName, country) => {
+//   return `${firstName} ${lastName}. Lives in ${country}.`;
+// };
+
+// // calling a functons
+
+// console.log(getUserInfo('Asabeneh', 'Yeteyeh', 'Finland'));
