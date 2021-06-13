@@ -1516,3 +1516,214 @@ console.log(filteredArray); */
 // // calling a functons
 
 // console.log(getUserInfo('Asabeneh', 'Yeteyeh', 'Finland'));
+
+// function mostrarNumero() {
+//   let numero;
+//   let numero2;
+//   let numero3;
+//   let suma;
+
+//   numero = prompt('Ingrese un número');
+//   numero2 = prompt('Ingrese otro número');
+//   numero3 = prompt('Ingrese OTRO número');
+//   suma = parseInt(numero) + parseInt(numero2) + parseInt(numero3);
+
+//   alert(suma);
+// }
+
+// mostrarNumero();
+
+//
+
+//SINCE TODAY PRACTICE WITH QAZI JS
+
+//Loopear un array de frutas
+
+let fruits = ['apples', 'oranges', 'kiwis', 'melons', 'pears'];
+let i;
+
+for (i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+//Pasar el array a string
+console.log(fruits.toString()); //Devuelve "apples, oranges, kiwis, melons, pears"
+
+//Pasar el array a un array separado por guiones
+console.log(fruits.join('-')); //Devielve "apples-oranges-kiwis-melons-pears"
+
+//Adjuntar otro array al array
+let vegetables = ['tomato', 'lettuce', 'carrots'];
+let allGroceries = fruits.concat(vegetables);
+console.log(allGroceries); //Devuelve ["aples", "oranges", "kiwis", "melons", "pears", "tomato", "lettuce", "carrots"]
+
+//Reverse
+console.log(allGroceries.reverse());
+
+//Ordenar alfabéticamente
+console.log(allGroceries.sort());
+
+//Ordenar unos números (Funciona diferente que con letras)
+let someNumbers = [2, 43, 66, 129, 23, 13, 98, 29, 58, 111];
+
+console.log(
+  someNumbers.sort(function (a, b) {
+    return a - b;
+  })
+); //Funciona de manera ascendente
+
+console.log(
+  someNumbers.sort(function (a, b) {
+    return b - a;
+  })
+); //Funciona de manera descendente
+
+//Creo un nuevo array y lo lleno con números
+
+let newArray = new Array();
+for (let num = 1; num <= 10; num++) {
+  newArray.push(num);
+}
+console.log(newArray); //Me devuelve los números del 1 al 10 en un aerray
+
+//Hacer una función que sume dos números (hecha con es6)
+
+const addNumbers = (num1, num2) => {
+  return num1 + num2;
+};
+console.log(addNumbers(100, 200));
+
+//Hacer una funcion que convierta de minutos a segundos
+
+const convertMinutesToSeconts = (minutes) => {
+  return minutes * 60;
+};
+
+console.log(convertMinutesToSeconts(2));
+
+//Hacer una funcion que convierta tu edad en segundos
+
+const convertAgeToSeconds = (age) => {
+  return age * 12 * 30 * 24 * 60 * 60;
+};
+
+console.log(convertAgeToSeconds(37));
+
+//Hacer un algoritmo que siempre me retorne el primer elemento de un array
+
+const getFirstItem = (item) => {
+  return item[0];
+};
+
+console.log(getFirstItem(['mork', 'mark', 'merk']));
+
+//Hacer un algoritmo que diga si la pelicula es buena o mala
+
+const badOrGoodMovie = (movie_rating) => {
+  if (movie_rating >= 7) return 'Good Movie!';
+
+  return 'Bad Movie';
+};
+
+console.log(badOrGoodMovie(9));
+
+//Checkear si un string es vacío
+
+const stringIsEmpty = (string) => {
+  if (string === '') return 'It is definetly empty';
+
+  return 'It is filled with stuff';
+};
+
+console.log(stringIsEmpty('Holaaaaaaaa'));
+
+//Checkear el min y el max en un array de numeros
+
+// let arrayDeNumeros = [2, 4, 5, 9, 11, 3, 23];
+
+// const findMin = (numbers) => {
+//   let minimum = numbers[0];
+
+//   for (i = 0; i < numbers.length; i++) {
+//     if (numbers[i] < minimum) {
+//       minimum = numbers[i];
+//     }
+//   }
+
+//   return minimum;
+// };
+
+// console.log(findMin(arrayDeNumeros));
+
+// const findMax = (numbers) => {
+//   let maximum = numbers[0];
+
+//   for (i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > maximum) {
+//       maximum = numbers[i];
+//     }
+//   }
+//   return maximum;
+// };
+
+// console.log(findMax(arrayDeNumeros));
+
+// //Ordenar las películas de la mejor a la peor
+
+// let arrayMovies = [2, 4, 9, 8, 7];
+
+// const sortBestRatingsFirst = (numbers) => {
+//   for (let j = 0; j < numbers.length - 1; j++) {
+//     let max_num = numbers[j];
+//     let max_location = j;
+
+//     //Find max
+//     for (let i = j; i < numbers.length; i++) {
+//       if (numbers[i] > max_num) {
+//         max_num = numbers[i];
+//         max_location = i;
+//       }
+//     }
+//     //Swap first and last
+//     numbers[max_location] = numbers[j];
+//     numbers[j] = max_num;
+//   }
+
+//   return numbers;
+// };
+
+// console.log(sortBestRatingsFirst(arrayMovies));
+
+//Hacer lo mismo pero con una función helper
+
+let arrayOfNumbers = [2, 5, 1, 8, 9];
+
+const findMaxHelper = (numbers, start) => {
+  let maximum = numbers[start];
+  let max_location = start;
+
+  for (let i = start; i < numbers.length; i++) {
+    if (numbers[i] > maximum) {
+      maximum = numbers[i];
+      max_location = i;
+    }
+  }
+  return { max_number: maximum, max_index: max_location };
+};
+
+const sortBestWithHelper = (numbers) => {
+  for (let j = 0; j < numbers.length - 1; j++) {
+    //find maxHelper
+    max = findMaxHelper(numbers, j);
+    max_num = max['max_number'];
+    max_location = max['max_index'];
+
+    //swap first and last number
+    numbers[max_location] = numbers[j];
+    numbers[j] = max_num;
+  }
+
+  return numbers;
+};
+
+console.log(sortBestWithHelper(arrayOfNumbers));
