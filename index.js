@@ -1696,34 +1696,108 @@ console.log(stringIsEmpty('Holaaaaaaaa'));
 
 //Hacer lo mismo pero con una función helper
 
-let arrayOfNumbers = [2, 5, 1, 8, 9];
+// let arrayOfNumbers = [2, 5, 1, 8, 9];
 
-const findMaxHelper = (numbers, start) => {
-  let maximum = numbers[start];
-  let max_location = start;
+// const findMaxHelper = (numbers, start) => {
+//   let maximum = numbers[start];
+//   let max_location = start;
 
-  for (let i = start; i < numbers.length; i++) {
-    if (numbers[i] > maximum) {
-      maximum = numbers[i];
-      max_location = i;
-    }
-  }
-  return { max_number: maximum, max_index: max_location };
-};
+//   for (let i = start; i < numbers.length; i++) {
+//     if (numbers[i] > maximum) {
+//       maximum = numbers[i];
+//       max_location = i;
+//     }
+//   }
+//   return { max_number: maximum, max_index: max_location };
+// };
 
-const sortBestWithHelper = (numbers) => {
-  for (let j = 0; j < numbers.length - 1; j++) {
-    //find maxHelper
-    max = findMaxHelper(numbers, j);
-    max_num = max['max_number'];
-    max_location = max['max_index'];
+// const sortBestWithHelper = (numbers) => {
+//   for (let j = 0; j < numbers.length - 1; j++) {
+//     //find maxHelper
+//     max = findMaxHelper(numbers, j);
+//     max_num = max['max_number'];
+//     max_location = max['max_index'];
 
-    //swap first and last number
-    numbers[max_location] = numbers[j];
-    numbers[j] = max_num;
-  }
+//     //swap first and last number
+//     numbers[max_location] = numbers[j];
+//     numbers[j] = max_num;
+//   }
 
-  return numbers;
-};
+//   return numbers;
+// };
 
-console.log(sortBestWithHelper(arrayOfNumbers));
+// console.log(sortBestWithHelper(arrayOfNumbers));
+
+// //REDUCE FUNCTIONS TO GET VALUES
+
+// const combatStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.combat);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const durabilityStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.durability);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const intelligenceStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.intelligence);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const powerStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.power);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const speedStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.speed);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const strengthStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.powerstats.strength);
+//       })
+//       .reduce((a, b) => a + b) / team.length
+//   : '';
+
+// const heightStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.appearance.height[1]) / team.length;
+//       })
+//       .reduce((a, b) => a + b)
+//   : '';
+
+// const weightStats =
+// team.length > 0
+//   ? team
+//       .map((hero) => {
+//         return parseInt(hero.appearance.weight[1]) / team.length;
+//       })
+//       .reduce((a, b) => a + b)
+//   : '';
