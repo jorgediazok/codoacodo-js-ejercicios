@@ -1848,16 +1848,36 @@
 //KATA: EJERCICIO 540617388 => 046887531  Ordenar los números primero ascendente
 // y luego de manera descendiente
 
-const orderedNumbers = (number) => {
-  const numbersArray = number
-    .toString()
-    .split('')
-    .map((num) => parseInt(num));
-  return numbersArray;
-};
-
 //Primero convertimos el numero a string, luego con el split lo convertimos en array, luego lo mapeamos y lo volvemos a convertir en un int y me queda un array
+
+// const orderedNumbers = (number) => {
+//   const numbersArray = number
+//     .toString()
+//     .split('')
+//     .map((num) => parseInt(num));
+
+//   const evens = numbersArray.filter((num) => num % 2 === 0).sort(); //PARES
+//   const odds = numbersArray
+//     .filter((num) => num % 2 !== 0)
+//     .sort()
+//     .reverse(); //IMPARES
+//   const orderedNumbers = evens.concat(odds).join('');
+
+//   console.log(orderedNumbers);
+
+//   return numbersArray;
+// };
+
 //con [5,4,0,6,1,7,3,8,8]
 
-const result = orderedNumbers(540617388);
-console.log(result);
+// const result = orderedNumbers(540617388);
+
+//DADO UN ARRAY USE DESTRUCTURING PARA OBTENER EL PRIMERO Y SEGUNDO Y GUARDAR
+//LOS OTROS RESTANTES EN OTRO ARRAY
+
+const players = ['Murray', 'Nadal', 'Alejandro', 'Djokovic', 'Soras', 'Rumi'];
+
+const [primero, segundo, ...rest] = players;
+
+console.log(primero, segundo);
+console.log(rest);
