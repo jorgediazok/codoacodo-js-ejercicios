@@ -1875,9 +1875,50 @@
 //DADO UN ARRAY USE DESTRUCTURING PARA OBTENER EL PRIMERO Y SEGUNDO Y GUARDAR
 //LOS OTROS RESTANTES EN OTRO ARRAY
 
-const players = ['Murray', 'Nadal', 'Alejandro', 'Djokovic', 'Soras', 'Rumi'];
+// const players = ['Murray', 'Nadal', 'Alejandro', 'Djokovic', 'Soras', 'Rumi'];
 
-const [primero, segundo, ...rest] = players;
+// const [primero, segundo, ...rest] = players;
 
-console.log(primero, segundo);
-console.log(rest);
+// console.log(primero, segundo);
+// console.log(rest);
+
+//-----------------------------------------------------------------
+
+//FIZZBUZZ: Escriba un programa que use console.log para imprimir todos los
+//números del 1 al 100 con dos excepciones. Para los números divisibles por
+//3, imprima Fizz, para los divisibles por 5 Buzz
+
+// for (let i = 1; i <= 100; i++) {
+//   let result = '';
+
+//   if (i % 3 === 0) {
+//     result += 'Fizz';
+//   }
+
+//   if (i % 5 === 0) {
+//     result += 'Buzz';
+//   }
+
+//   console.log(result || i);
+// }
+
+//Dado un string, cree una función reverse que invierta el orden de los caracteres
+
+// let myText = 'hello world';
+// let textReverse = '';
+
+// for (letter of myText) {
+//   textReverse = letter + textReverse;
+// }
+
+// console.log(textReverse);
+
+//Dado un string, cree una función que invierta el orden de sus caracteres.
+//Debe de utilizar una desestructuración en el proceso.
+
+let myText = 'hello world';
+let textReverse = '';
+// myText = [myText]; //Devuelve [myText]
+let myTextArrayChar = [...myText]; //Devuelve ["h", "e", "l", "l", "o", "", "w", "o", "r", "l", "d"]
+myTextArrayChar.reverse();
+console.log(myTextArrayChar);
