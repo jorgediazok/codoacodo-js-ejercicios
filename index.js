@@ -2130,3 +2130,17 @@ function cuadrado(numero) {
 }
 
 console.log(cuadrado(4));
+
+//EJEMPLO DE CLOSURE
+function crearContador() {
+  let contador = 0;
+  return function incrementar() {
+    contador = contador + 1;
+    return contador;
+  };
+}
+
+const contador1 = crearContador();
+console.log(contador1());
+console.log(contador1());
+console.log(contador1());
