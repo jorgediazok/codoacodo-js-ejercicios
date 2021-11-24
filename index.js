@@ -1913,12 +1913,220 @@
 
 // console.log(textReverse);
 
+// OTRO EJERCICIO
+
 //Dado un string, cree una función que invierta el orden de sus caracteres.
 //Debe de utilizar una desestructuración en el proceso.
 
-let myText = 'hello world';
-let textReverse = '';
+// let myText = 'hello world';
+// let textReverse = '';
 // myText = [myText]; //Devuelve [myText]
-let myTextArrayChar = [...myText]; //Devuelve ["h", "e", "l", "l", "o", "", "w", "o", "r", "l", "d"]
-myTextArrayChar.reverse();
-console.log(myTextArrayChar);
+// let myTextArrayChar = [...myText]; //Devuelve ["h", "e", "l", "l", "o", "", "w", "o", "r", "l", "d"]
+// myTextArrayChar.reverse().join(); //Devuelve el mismo array pero al reves
+
+// function reverseDes(myText) {
+//   return [...myText].reverse().join('');
+// }
+
+// console.log(reverseDes('hello people'));
+//-----------------
+//Dado un string invierta el orden de sus caracteres recursivamente
+
+// function reverse(text) {
+//   if (text === '') {
+//     return '';
+//   }
+//   let subtext = text.substring(1);
+//   return reverse(subtext) + text.charAt(0);
+// }
+
+// console.log(reverse('hola mundo'));
+
+//-----------------
+//Dado un string, invierta el orden de sus caracteres sin utilizar un nuevo string
+//Realice las modificaciones en el propio string
+// ESTO NO SE PUEDE HACER PORQUE LOS STRINGS SON INMUTABLES EN JS
+
+//-------------
+
+//Construya una función isPalindrome, la cual dado un string nos indique si
+//es un palindrome o no
+// let myText = 'Yo dono rosas oro no doy';
+
+// function clearText(text) {
+//   return text.split(' ').join('');
+// }
+
+// let myClearText = clearText(myText.toLowerCase()); //Para que no detecte la may Yo
+
+// function isPalindrome(text) {
+//   let myClearText = clearText(text); //"yodonorosasoronodoy"
+//   return myClearText === reverse(myClearText);
+// }
+
+// console.log(isPalindrome('121')); //DEVUELVE TRUE
+// console.log(isPalindrome('122')); //DEVUELVE FALSE
+
+//--------
+//Intente invertir las palabras de una frase, pero cada palabra debe mantenerse
+//en el mismo lugar EJEMPLO: Hello World === olleH dlroW
+
+//FUNCION REVERSE CON RECURSION
+
+// function reverse(text) {
+//   if (text === '') {
+//     return '';
+//   }
+//   let subtext = text.substring(1);
+//   return reverse(subtext) + text.charAt(0);
+// }
+
+// let myText = 'Yo dono rosas oro no doy';
+// let textToArray = myText.split(' '); //["Yo", "dono", "rosas", "oro", "no", "doy"]
+// let arrayInverted = textToArray.map((word) => reverse(word));
+// let invertedText = arrayInverted.join(' ');
+// console.log(invertedText); //oyY onoD sasoR oro on yod
+
+//
+
+//---------
+//Implemente un algoritmo capaz de combinar dos arrays ordenados, obteniendo
+//un array ordenado.
+
+// let arr1 = [1, 2, 3, 4, 5];
+// let arr2 = [4, 5, 6, 7, 8];
+
+// function mergeArrays(arr1, arr2) {
+//   let combinedArray = [];
+//   //Comparo los primeros elementos que son los mínimos
+//   while (arr1.length && arr2.length) {
+//     let firstElement;
+
+//     //saco el primer elemento y lo pongo en combinedArray
+//     if (arr1[0] < arr2[0]) {
+//       firstElement = arr1.shift();
+//     } else {
+//       firstElement = arr2.shift();
+//     }
+//     combinedArray.push(firstElement);
+//   }
+//   //Si queda vacío uno de los arrays concatename los elementos restantes al final
+//   combinedArray = combinedArray.concat(arr1).concat(arr2);
+//   return combinedArray;
+// }
+
+// console.log(mergeArrays(arr1, arr2));
+
+//------------
+// console.log(nombre);
+
+// var nombre = 'Jorge';
+
+// function saludar(nombre) {
+//   return `Hola ${nombre}`;
+// }
+
+// saludar();
+
+//----------
+//OTRO EJERCICIO DE PALINDROMO
+
+// function isPalindrome(text) {
+//   let inverted = text.split('').reverse().join('');
+//   return inverted === text; //devuelve true o false
+// }
+
+// console.log('¿Es un palíndromo?' + ' ' + isPalindrome('menem'));
+
+//-------
+//EJERCICIO: Dada una palabra buscarla en una frase y devolver cuantas
+//veces aparece en ella. La frase y la palabra deben ser parámetros de
+//una función
+
+function coincidencias(frase, busqueda) {
+  let texto_limpio = frase.toLowerCase().replace(/[!¡.,-]/gi, ''); //LIMPIO FRASE
+  let resultado = 0;
+  if (texto_limpio.includes(busqueda)) {
+    let palabras = texto_limpio.split(' ');
+    let mapa = [];
+    for (let palabra of palabras) {
+      if (mapa[palabra]) {
+        mapa[palabra]++;
+      } else {
+        mapa[palabra] = 1;
+      }
+    }
+    resultado = mapa[busqueda];
+  } else {
+    resultado = 0;
+  }
+  return resultado;
+}
+
+console.log(
+  'Número de coincidencias en la búsqueda :',
+  coincidencias('Esto es una frase que, no repite una, palabra', 'una')
+);
+
+//OTRA VERSIOn
+const buscarPalabra = (frase, palabra) => {
+  let aux = frase
+    .toLowerCase()
+    .replace(/[!¡.,-¿?]/gi, '')
+    .split(' ');
+  let cont = 0;
+
+  for (let i = 0; i < aux.length; i++) {
+    if (aux[i].includes(palabra)) {
+      cont++;
+    }
+  }
+  return cont;
+};
+//-----
+//Dada una cadena de texto, darle la vuelta e invertir el orden de sus
+//caracteres, sin usar métodos propios del lenguaje, solo estructuras de control
+
+function invertirTexto(texto) {
+  let invertido = '';
+  for (let letra of texto) {
+    invertido = letra + invertido;
+  }
+  return invertido;
+}
+
+function invertirTextoOtraOpcion(texto) {
+  return texto.split('').reverse().join('');
+}
+
+console.log('Texto Invertido: ' + invertirTexto('Madmoiselle'));
+console.log('Texto Invertido: ' + invertirTextoOtraOpcion('Madmoiselle'));
+
+//---
+//Dibujar un cuadrado hueco con asteriscos
+
+function lado(numero) {
+  let lado = '';
+  for (let i = 0; i < numero; i++) {
+    lado += '*';
+  }
+  return lado;
+}
+
+function cuadrado(numero) {
+  let dibujo = lado(numero) + '\n';
+  let contenido = '';
+  for (let i = 0; i < numero - 2; i++) {
+    contenido = '*';
+    for (let x = 0; x < numero - 2; x++) {
+      contenido += ' ';
+    }
+    contenido += '*';
+    dibujo += contenido + '\n';
+  }
+  dibujo += lado(numero);
+
+  return dibujo;
+}
+
+console.log(cuadrado(4));
