@@ -2043,104 +2043,130 @@
 //veces aparece en ella. La frase y la palabra deben ser parámetros de
 //una función
 
-function coincidencias(frase, busqueda) {
-  let texto_limpio = frase.toLowerCase().replace(/[!¡.,-]/gi, ''); //LIMPIO FRASE
-  let resultado = 0;
-  if (texto_limpio.includes(busqueda)) {
-    let palabras = texto_limpio.split(' ');
-    let mapa = [];
-    for (let palabra of palabras) {
-      if (mapa[palabra]) {
-        mapa[palabra]++;
-      } else {
-        mapa[palabra] = 1;
-      }
-    }
-    resultado = mapa[busqueda];
-  } else {
-    resultado = 0;
-  }
-  return resultado;
+// function coincidencias(frase, busqueda) {
+//   let texto_limpio = frase.toLowerCase().replace(/[!¡.,-]/gi, ''); //LIMPIO FRASE
+//   let resultado = 0;
+//   if (texto_limpio.includes(busqueda)) {
+//     let palabras = texto_limpio.split(' ');
+//     let mapa = [];
+//     for (let palabra of palabras) {
+//       if (mapa[palabra]) {
+//         mapa[palabra]++;
+//       } else {
+//         mapa[palabra] = 1;
+//       }
+//     }
+//     resultado = mapa[busqueda];
+//   } else {
+//     resultado = 0;
+//   }
+//   return resultado;
+// }
+
+// console.log(
+//   'Número de coincidencias en la búsqueda :',
+//   coincidencias('Esto es una frase que, no repite una, palabra', 'una')
+// );
+
+// //OTRA VERSIOn
+// const buscarPalabra = (frase, palabra) => {
+//   let aux = frase
+//     .toLowerCase()
+//     .replace(/[!¡.,-¿?]/gi, '')
+//     .split(' ');
+//   let cont = 0;
+
+//   for (let i = 0; i < aux.length; i++) {
+//     if (aux[i].includes(palabra)) {
+//       cont++;
+//     }
+//   }
+//   return cont;
+// };
+// //-----
+// //Dada una cadena de texto, darle la vuelta e invertir el orden de sus
+// //caracteres, sin usar métodos propios del lenguaje, solo estructuras de control
+
+// function invertirTexto(texto) {
+//   let invertido = '';
+//   for (let letra of texto) {
+//     invertido = letra + invertido;
+//   }
+//   return invertido;
+// }
+
+// function invertirTextoOtraOpcion(texto) {
+//   return texto.split('').reverse().join('');
+// }
+
+// console.log('Texto Invertido: ' + invertirTexto('Madmoiselle'));
+// console.log('Texto Invertido: ' + invertirTextoOtraOpcion('Madmoiselle'));
+
+// //---
+// //Dibujar un cuadrado hueco con asteriscos
+
+// function lado(numero) {
+//   let lado = '';
+//   for (let i = 0; i < numero; i++) {
+//     lado += '*';
+//   }
+//   return lado;
+// }
+
+// function cuadrado(numero) {
+//   let dibujo = lado(numero) + '\n';
+//   let contenido = '';
+//   for (let i = 0; i < numero - 2; i++) {
+//     contenido = '*';
+//     for (let x = 0; x < numero - 2; x++) {
+//       contenido += ' ';
+//     }
+//     contenido += '*';
+//     dibujo += contenido + '\n';
+//   }
+//   dibujo += lado(numero);
+
+//   return dibujo;
+// }
+
+// console.log(cuadrado(4));
+
+// //EJEMPLO DE CLOSURE
+// function crearContador() {
+//   let contador = 0;
+//   return function incrementar() {
+//     contador = contador + 1;
+//     return contador;
+//   };
+// }
+
+// const contador1 = crearContador();
+// console.log(contador1());
+// console.log(contador1());
+// console.log(contador1());
+
+// let miCalculo = 8 / 2;
+// console.log(miCalculo);
+
+// let miEjemplo = 'Fullstack';
+// console.log(miEjemplo);
+
+// for (let i = 1; i < 10; i++) {
+//   console.log(i);
+// }
+
+// let a = 20;
+// let b = 10;
+
+// if (a + b > 30) {
+//   console.log('Entré acá');
+// }
+
+var numero = 36;
+var divisor = 3;
+
+if (numero / divisor > 12) {
+  console.log('Puedo dividrlo');
+} else {
+  console.log('no puedo ');
 }
-
-console.log(
-  'Número de coincidencias en la búsqueda :',
-  coincidencias('Esto es una frase que, no repite una, palabra', 'una')
-);
-
-//OTRA VERSIOn
-const buscarPalabra = (frase, palabra) => {
-  let aux = frase
-    .toLowerCase()
-    .replace(/[!¡.,-¿?]/gi, '')
-    .split(' ');
-  let cont = 0;
-
-  for (let i = 0; i < aux.length; i++) {
-    if (aux[i].includes(palabra)) {
-      cont++;
-    }
-  }
-  return cont;
-};
-//-----
-//Dada una cadena de texto, darle la vuelta e invertir el orden de sus
-//caracteres, sin usar métodos propios del lenguaje, solo estructuras de control
-
-function invertirTexto(texto) {
-  let invertido = '';
-  for (let letra of texto) {
-    invertido = letra + invertido;
-  }
-  return invertido;
-}
-
-function invertirTextoOtraOpcion(texto) {
-  return texto.split('').reverse().join('');
-}
-
-console.log('Texto Invertido: ' + invertirTexto('Madmoiselle'));
-console.log('Texto Invertido: ' + invertirTextoOtraOpcion('Madmoiselle'));
-
-//---
-//Dibujar un cuadrado hueco con asteriscos
-
-function lado(numero) {
-  let lado = '';
-  for (let i = 0; i < numero; i++) {
-    lado += '*';
-  }
-  return lado;
-}
-
-function cuadrado(numero) {
-  let dibujo = lado(numero) + '\n';
-  let contenido = '';
-  for (let i = 0; i < numero - 2; i++) {
-    contenido = '*';
-    for (let x = 0; x < numero - 2; x++) {
-      contenido += ' ';
-    }
-    contenido += '*';
-    dibujo += contenido + '\n';
-  }
-  dibujo += lado(numero);
-
-  return dibujo;
-}
-
-console.log(cuadrado(4));
-
-//EJEMPLO DE CLOSURE
-function crearContador() {
-  let contador = 0;
-  return function incrementar() {
-    contador = contador + 1;
-    return contador;
-  };
-}
-
-const contador1 = crearContador();
-console.log(contador1());
-console.log(contador1());
-console.log(contador1());
