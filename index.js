@@ -2162,11 +2162,22 @@
 //   console.log('Entré acá');
 // }
 
-var numero = 36;
-var divisor = 3;
+// var numero = 36;
+// var divisor = 3;
 
-if (numero / divisor > 12) {
-  console.log('Puedo dividrlo');
-} else {
-  console.log('no puedo ');
+// if (numero / divisor > 12) {
+//   console.log('Puedo dividrlo');
+// } else {
+//   console.log('no puedo ');
+// }
+
+function crearContador() {
+  let contador = 0;
+  return function incrementar() {
+    contador = contador + 1;
+    return contador;
+  };
 }
+const contador1 = crearContador();
+
+console.log(contador1);
