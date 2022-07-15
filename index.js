@@ -2171,13 +2171,250 @@
 //   console.log('no puedo ');
 // }
 
-function crearContador() {
-  let contador = 0;
-  return function incrementar() {
-    contador = contador + 1;
-    return contador;
-  };
-}
-const contador1 = crearContador();
+// function crearContador() {
+//   let contador = 0;
+//   return function incrementar() {
+//     contador = contador + 1;
+//     return contador;
+//   };
+// }
+// const contador1 = crearContador();
 
-console.log(contador1);
+// console.log(contador1);
+
+//PURE FUNCTION
+// function addData(firstInput, secondInput) {
+//   return firstInput + secondInput;
+// }
+// var getData = addData(1, 2);
+// console.log(getData);
+// ---------------------
+//FIZZBUZZ
+// function fizzbuzz() {
+//   for (let i = 1; i <= 100; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log('FizzBuzz');
+//     } else if (i % 3 === 0) {
+//       console.log('Fizz');
+//     } else if (i % 5 === 0) {
+//       console.log('Buzz');
+//     } else {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// fizzbuzz();
+
+//CHALLENGE: Que imprime el console.log(i) ?
+
+// function variables() {
+//   var i = 'contratado';
+//   for (var i = 0; i < 2; i++) {
+//     //var aca ya es 2
+//   }
+//   console.log(i);
+// }
+
+// variables();
+
+//ANSWER: 2. Porque var se redeclara. Si uso let en ambos lugares, da contratado,
+//porque el segundo let se usa solo dentro del escope del for, el otro sigue siendo igual
+
+// -----------------------------------------------------------------------------
+
+//OUTPUT QUESTIONS
+
+// Question 1: (Strings, Numbers, Boolean)
+
+// var num = 8;
+// var num = 10;
+// console.log(num);
+
+// Answer — 10
+// Explanation — With the var keyword, you can declare multiple variables with the same name. The variable will then hold the latest value. You cannot do this with let or const since they're block-scoped.
+
+//QUESTION 2
+
+// function sayHi() {
+//   console.log(name);
+//   console.log(age);
+//   var name = 'Ayush';
+//   let age = 21;
+// }
+
+// sayHi();
+
+// Answer — undefined and ReferenceError
+// Explanation — Within the function, we first declare the name variable with the var keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of undefined, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the name variable, so it still holds the value of undefined. Variables with the let keyword (and const) are hoisted, but unlike var, don't get initialized. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a ReferenceError.
+
+//QUESTION 3
+
+// function getAge() {
+//   'use strict';
+//   age = 21;
+//   console.log(age);
+// }
+
+// getAge();
+
+// Answer — ReferenceError
+// Explanation —With "use strict", you can make sure that you don't accidentally declare global variables. We never declared the variable age, and since we use "use strict", it will throw a reference error. If we didn't use "use strict", it would have worked, since the property age would have gotten added to the global object.
+
+//QUESTION 4
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// sum(1, '2');
+
+// Answer — "12"
+// Explanation —JavaScript is a dynamically typed language: we don’t specify what types of certain variables are. Values can automatically be converted into another type without you knowing, which is called implicit type coercion. Coercion is converting from one type into another.
+
+// In this example, JavaScript converts the number 1 into a string, in order for the function to make sense and return a value. During the addition of a numeric type (1) and a string type ('2'), the number is treated as a string. We can concatenate strings like "Hello" + "World", so what's happening here is "1" + "2" which returns "12".
+
+// QUESTION 5
+
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+
+// Answer — 1 2 4
+// Explanation —The continue statement skips an iteration if a certain condition returns true.
+
+//QUESTION 6
+
+function sayHi() {
+  return (() => 0)();
+}
+
+console.log(typeof sayHi());
+
+// Answer — "number"
+// Explanation —The sayHi function returns the returned value of the immediately invoked function expression (IIFE). This function returned 0, which is type "number".
+
+// FYI: there are only 7 built-in types: null, undefined, boolean, number, string, object, and symbol. "function" is not a type, since functions are objects, it's of type "object".
+
+//QUESTION 7
+console.log(typeof typeof 1);
+
+// Answer —"string"
+// Explanation —typeof 1 returns "number". And typeof "number" returns "string".
+
+//QUESTION 8
+
+const ayushString = 'Ayush';
+const ayush = [...ayushString];
+console.log(ayush);
+
+// Answer — ["A", "y", "u", "s", "h"]
+// Explanation —A string is an iterable. The spread operator maps every character of an iterable to one element.
+
+//QUESTION 9
+var a = 10;
+var b = a;
+b = 20;
+console.log(a);
+console.log(b);
+var a = 'Ayush';
+var b = a;
+b = 'Verma';
+console.log(a);
+console.log(b);
+
+// Answer —
+// 1. 10 and 20
+// 2. "Ayush" and "Verma"
+// Explanation —The value assigned to the variable of primitive data type is tightly coupled. That means, whenever you create a copy of a variable of primitive data type, the value is copied to a new memory location to which the new variable is pointing to. When you make a copy, it will be a real copy.
+
+//QUESTION 10
+function sum() {
+  return arguments.reduce((a, b) => a + b);
+}
+
+console.log(sum(1, 2, 3));
+1;
+function sum(...arguments) {
+  return arguments.reduce((a, b) => a + b);
+}
+
+console.log(sum(1, 2, 3));
+2;
+
+// Answer —
+// 1. Error will be thrown.
+// 2. 6
+// Explanation —
+// 1. Arguments are not fully functional array, they have only one method length. Other methods cannot be used on them.
+// 2. ... rest operator creates an array of all functions parameters. We then use this to return the sum of them.
+
+//QUESTION 11
+
+let lang = 'javascript';
+(function () {
+  let lang = 'java';
+})();
+
+console.log(lang);
+(function () {
+  var lang2 = 'java';
+})();
+
+console.log(lang2);
+
+// Answer —
+// 1. “javascript”
+// 2. Error will be thrown.
+// Explanation —
+// 1. Variables defined with let are blocked scope and are not added to the global object.
+// 2. Variables declared with var keyword are function scoped, so wrapping the function inside a closure will restrict it from being accessed outside that is why it throws error
+
+//QUESTION 12
+
+(function () {
+  console.log(typeof this);
+}.call(10));
+
+// Answer — object
+// Explanation — call invokes the function with new this which in this case is 10 which is basically a constructor of Number and Number is object in javascript.
+
+//QUESTION 13
+const obj = { a: 'one', b: 'two', a: 'three' };
+console.log(obj);
+
+// Answer — { a: "three", b: "two"}"
+// Explanation —If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
+
+//QUESTION 14
+let c = { greeting: 'Hey!' };
+let d;
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+
+// Answer — Hello
+// Explanation — In JavaScript, all objects interact by reference when setting them equal to each other.
+
+// First, a variable c holds a value to an object. Later, we assign d with the same reference that c has to the object. When you change one object, you change all of them.
+
+//QUESTION 15
+function getAge(...args) {
+  console.log(typeof args);
+}
+
+getAge(21);
+
+// Answer — "object"
+// Explanation —The rest parameter (...args) lets us "collect" all remaining arguments into an array. An array is an object, so typeof args returns "object".
+
+//QUESTION 16
+
+//QUESTION 17
+
+//QUESTION 18
+
+//QUESTION 19
+
+//QUESTION 20
