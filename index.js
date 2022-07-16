@@ -2313,16 +2313,16 @@ console.log(ayush);
 // Explanation —A string is an iterable. The spread operator maps every character of an iterable to one element.
 
 //QUESTION 9
-var a = 10;
-var b = a;
-b = 20;
-console.log(a);
-console.log(b);
-var a = 'Ayush';
-var b = a;
-b = 'Verma';
-console.log(a);
-console.log(b);
+// var a = 10;
+// var b = a;
+// b = 20;
+// console.log(a);
+// console.log(b);
+// var a = 'Ayush';
+// var b = a;
+// b = 'Verma';
+// console.log(a);
+// console.log(b);
 
 // Answer —
 // 1. 10 and 20
@@ -2330,18 +2330,16 @@ console.log(b);
 // Explanation —The value assigned to the variable of primitive data type is tightly coupled. That means, whenever you create a copy of a variable of primitive data type, the value is copied to a new memory location to which the new variable is pointing to. When you make a copy, it will be a real copy.
 
 //QUESTION 10
-function sum() {
-  return arguments.reduce((a, b) => a + b);
-}
+// function sum() {
+//   return arguments.reduce((a, b) => a + b);
+// }
 
-console.log(sum(1, 2, 3));
-1;
-function sum(...arguments) {
-  return arguments.reduce((a, b) => a + b);
-}
+// console.log(sum(1, 2, 3));
+// function sum(...arguments) {
+//   return arguments.reduce((a, b) => a + b);
+// }
 
-console.log(sum(1, 2, 3));
-2;
+// console.log(sum(1, 2, 3));
 
 // Answer —
 // 1. Error will be thrown.
@@ -2352,17 +2350,17 @@ console.log(sum(1, 2, 3));
 
 //QUESTION 11
 
-let lang = 'javascript';
-(function () {
-  let lang = 'java';
-})();
+// let lang = 'javascript';
+// (function () {
+//   let lang = 'java';
+// })();
 
-console.log(lang);
-(function () {
-  var lang2 = 'java';
-})();
+// console.log(lang);
+// (function () {
+//   var lang2 = 'java';
+// })();
 
-console.log(lang2);
+// console.log(lang2);
 
 // Answer —
 // 1. “javascript”
@@ -2373,26 +2371,26 @@ console.log(lang2);
 
 //QUESTION 12
 
-(function () {
-  console.log(typeof this);
-}.call(10));
+// (function () {
+//   console.log(typeof this);
+// }.call(10));
 
 // Answer — object
 // Explanation — call invokes the function with new this which in this case is 10 which is basically a constructor of Number and Number is object in javascript.
 
 //QUESTION 13
-const obj = { a: 'one', b: 'two', a: 'three' };
-console.log(obj);
+// const obj = { a: 'one', b: 'two', a: 'three' };
+// console.log(obj);
 
 // Answer — { a: "three", b: "two"}"
 // Explanation —If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
 
 //QUESTION 14
-let c = { greeting: 'Hey!' };
-let d;
-d = c;
-c.greeting = 'Hello';
-console.log(d.greeting);
+// let c = { greeting: 'Hey!' };
+// let d;
+// d = c;
+// c.greeting = 'Hello';
+// console.log(d.greeting);
 
 // Answer — Hello
 // Explanation — In JavaScript, all objects interact by reference when setting them equal to each other.
@@ -2400,18 +2398,80 @@ console.log(d.greeting);
 // First, a variable c holds a value to an object. Later, we assign d with the same reference that c has to the object. When you change one object, you change all of them.
 
 //QUESTION 15
-function getAge(...args) {
-  console.log(typeof args);
-}
+// function getAge(...args) {
+//   console.log(typeof args);
+// }
 
-getAge(21);
+// getAge(21);
 
 // Answer — "object"
 // Explanation —The rest parameter (...args) lets us "collect" all remaining arguments into an array. An array is an object, so typeof args returns "object".
 
 //QUESTION 16
 
+// const foo = () => console.log('First');
+// const bar = () => setTimeout(() => console.log('Second'));
+// const baz = () => console.log('Third');
+// bar();
+// foo();
+// baz();
+
+// Answer — First Third Second
+// Explanation —We have a setTimeout function and invoked it first. Yet, it was logged last.
+
 //QUESTION 17
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i), 1);
+// }
+// for (let i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i), 1);
+// }
+
+// Answer — 3 3 3 and 0 1 2
+// Explanation — Because of the event queue in JavaScript, the setTimeout callback function is called after the loop has been executed. Since the variable i in the first loop was declared using the var keyword, this value was global. During the loop, we incremented the value of i by 1 each time, using the unary operator ++. By the time the setTimeout callback function was invoked, i was equal to 3 in the first example.
+
+// In the second loop, the variable i was declared using the let keyword: variables declared with the let (and const) keyword are block-scoped (a block is anything between { }). During each iteration, i will have a new value, and each value is scoped inside the loop.
+
+//QUESTION 18
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const sayush = new Person('Ayush', 'Verma');
+// const sarah = Person('Sarah', 'Smith');
+
+// console.log(sayush);
+// console.log(sarah);
+
+// Answer — Person {firstName: "Ayush", lastName: "Verma"} and undefined
+// Explanation —For sarah, we didn't use the new keyword. When using new, this refers to the new empty object we create. However, if you don't add new, this refers to the global object!
+
+//QUESTION 19
+// const a = {};
+// const b = { key: 'b' };
+// const c = { key: 'c' };
+
+// a[b] = 123;
+// a[c] = 456;
+
+// console.log(a[b]);
+// Answer — 456
+// Explanation — no se
+
+//QUESTION 20
+const shape = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * this.radius,
+};
+
+console.log(shape.diameter());
+console.log(shape.perimeter());
+// Answer — 20 and NaN
+// Explanation — The first one refers to the object and the perimeter the this makes reference to the window object
 
 //QUESTION 18
 
