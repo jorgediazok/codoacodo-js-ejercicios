@@ -2276,21 +2276,15 @@
 
 // QUESTION 5
 
-for (let i = 1; i < 5; i++) {
-  if (i === 3) continue;
-  console.log(i);
-}
+// for (let i = 1; i < 5; i++) {
+//   if (i === 3) continue;
+//   console.log(i);
+// }
 
 // Answer — 1 2 4
 // Explanation —The continue statement skips an iteration if a certain condition returns true.
 
 //QUESTION 6
-
-function sayHi() {
-  return (() => 0)();
-}
-
-console.log(typeof sayHi());
 
 // Answer — "number"
 // Explanation —The sayHi function returns the returned value of the immediately invoked function expression (IIFE). This function returned 0, which is type "number".
@@ -2298,16 +2292,16 @@ console.log(typeof sayHi());
 // FYI: there are only 7 built-in types: null, undefined, boolean, number, string, object, and symbol. "function" is not a type, since functions are objects, it's of type "object".
 
 //QUESTION 7
-console.log(typeof typeof 1);
+// console.log(typeof typeof 1);
 
 // Answer —"string"
 // Explanation —typeof 1 returns "number". And typeof "number" returns "string".
 
 //QUESTION 8
 
-const ayushString = 'Ayush';
-const ayush = [...ayushString];
-console.log(ayush);
+// const ayushString = 'Ayush';
+// const ayush = [...ayushString];
+// console.log(ayush);
 
 // Answer — ["A", "y", "u", "s", "h"]
 // Explanation —A string is an iterable. The spread operator maps every character of an iterable to one element.
@@ -2460,21 +2454,86 @@ console.log(ayush);
 // Explanation — no se
 
 //QUESTION 20
-const shape = {
-  radius: 10,
-  diameter() {
-    return this.radius * 2;
-  },
-  perimeter: () => 2 * Math.PI * this.radius,
-};
+// const shape = {
+//   radius: 10,
+//   diameter() {
+//     return this.radius * 2;
+//   },
+//   perimeter: () => 2 * Math.PI * this.radius,
+// };
 
-console.log(shape.diameter());
-console.log(shape.perimeter());
+// console.log(shape.diameter());
+// console.log(shape.perimeter());
 // Answer — 20 and NaN
 // Explanation — The first one refers to the object and the perimeter the this makes reference to the window object
 
-//QUESTION 18
+//FUNCION PARA CREAR NUMEROS ALEATORIOS
+// function generarAleatorio(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
 
-//QUESTION 19
+// for (let i = 1; i <= 10; i++) {
+//   console.log(generarAleatorio(1, 6));
+// }
 
-//QUESTION 20
+//OBTENER NUM MIN Y MAX DE UN ARRAY
+// let numeros = [7, 11, 2, 13, 25, 82, 11];
+
+// console.log(`El valor minimo es ${Math.min(...numeros)}`);
+// console.log(`El valor maximo es ${Math.max(...numeros)}`);
+
+//MATH FLOOR Y MATH CEIL DIFERENCIAS
+//El Math.floor(): redondea al entero menor más cercano
+//El Math.ceil(): redondea al entero mayor más cercano
+
+//INVERTIR NUMERO
+// function invertirNumero(numero) {
+//   return Number(numero.toString().split('').reverse().join(''));
+// }
+
+// console.log(invertirNumero(12345)); //OUTPUT 54321
+
+//CALCULAR LONGITUD DE NUMERO
+
+// function calcularLongitudNumero(numero) {
+//   return numero.toString().split('').length;
+// }
+
+// let valor = 123456789;
+
+// console.log(calcularLongitudNumero(valor)); //OUTPUT 9
+
+//INTERCAMBIAR EL CONTENIDO DE DOS VARIABLES SIN USAR UNA AUXILIAR
+let a = 100;
+let b = 50;
+
+function intercambiarNumeros(num1, num2) {
+  num2 = num2 - num1; // en este momento b es -50
+  num1 = num1 + num2; //en este momento a es 50
+  num2 = num1 - num2; //en este momento b es 100
+  return [num1, num2];
+}
+
+console.log(intercambiarNumeros(a, b));
+
+//CREAR UN METODO PARA ELIMINAR UN ELEMENTO DE UN ARREGLO
+function eliminarElemento(array, value) {
+  return array.filter((element) => {
+    return element != value;
+  });
+}
+
+console.log(eliminarElemento([1, 2, 3, 4, 5], 4));
+
+//AGREGAR UN ARREGLO AL FINAL DE OTRO
+let numeros1 = [1, 2, 3, 4, 5];
+let numeros2 = [6, 7, 8, 9, 10];
+
+let resultado = numeros1.concat(numeros2);
+console.log(resultado); //output [1,2,3,4,5,6,7,8,9,10]
+
+//INVERTIR EL ORDEN DE LOS ELEMENTOS DE UN ARRAY
+
+let numerosOrdenadosAlDerecho = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let numerosOrdenadosAlReves = numerosOrdenadosAlDerecho.reverse();
+console.log(numerosOrdenadosAlReves); //output [9,8,7,6,5,4,3,2,1]
