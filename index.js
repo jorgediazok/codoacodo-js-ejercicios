@@ -2537,3 +2537,54 @@ console.log(resultado); //output [1,2,3,4,5,6,7,8,9,10]
 let numerosOrdenadosAlDerecho = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let numerosOrdenadosAlReves = numerosOrdenadosAlDerecho.reverse();
 console.log(numerosOrdenadosAlReves); //output [9,8,7,6,5,4,3,2,1]
+
+//USO BASICO DEL OPERADOR SPREAD
+
+function sumar(a, b, c) {
+  return a + b + c;
+}
+
+let numerosSpread = [1, 2, 3];
+let sumaSpread = sumar(...numerosSpread);
+
+console.log(sumaSpread);
+
+//ORDENAR UN ARRAY CON LA FUNCION SORT
+
+let numerosSort = [12, 82, 32, 16, 8, 99, 35, 1];
+let numerosSorteados = numerosSort.sort();
+console.log(numerosSorteados); //SIRVE PARA ORDENAR ALFABETICAMENTE
+
+//COMPROBAR QUE TODOS LOS ELEMENTOS DE UN ARRAY CUMPLAN UNA CONDICION
+
+let arrayEveryNumbers = [3, 7, 2, 1, 9, 11, 13];
+let resultadoDeArrayEveryNumbers = arrayEveryNumbers.every((value) => {
+  return value > 2;
+});
+console.log(resultadoDeArrayEveryNumbers); //output false porque hay un 1
+
+//COMPROBAR QUE ALGUNOS DE LOS ELEMENTOS DE UN ARRAY CUMPLAN UNA CONDICION
+
+let resultadoDeArraySomeNumbers = arrayEveryNumbers.some((value) => {
+  return value > 2;
+});
+console.log(resultadoDeArraySomeNumbers); //output true porque algunos son mayores a 2
+
+//USAR REDUCE PARA SUMAR LOS NUMEROS DE UN ARRAY
+
+let numerosSinReduce = [1, 5, 8, 4, 13];
+let numerosConReduce = numerosSinReduce.reduce((acc, val) => {
+  return acc + val;
+}, 0);
+
+console.log(numerosConReduce); //output 31
+
+//ENCONTRAR LOS ELEMENTOS UNICOS DE UN ARRAY CON LA FUNCION FILTER
+
+let numerosNoUnicos = [1, 2, 2, 3, 3, 4, 5, 5, 6, 6, 6, 7, 8];
+
+let numerosUnicos = numerosNoUnicos.filter((value, index, array) => {
+  return array.indexOf(value) === index;
+});
+
+console.log(numerosUnicos); //Output: 1,2,3,4,5,6,7,8
