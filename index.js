@@ -2588,3 +2588,87 @@ let numerosUnicos = numerosNoUnicos.filter((value, index, array) => {
 });
 
 console.log(numerosUnicos); //Output: 1,2,3,4,5,6,7,8
+
+//CREAR UNA CLASE PERSONALIZADA
+
+class Persona {
+  constructor(nombre, apellido, edad, email) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+    this.email = email;
+  }
+
+  mostrarDatos() {
+    console.log('Nombre', this.nombre);
+    console.log('Apellido', this.apellido);
+    console.log('Edad', this.edad);
+    console.log('Email', this.email);
+  }
+}
+
+let persona = new Persona('Juan', 'Ortiz', 38, 'juan@mail.com');
+console.log(persona);
+persona.mostrarDatos();
+
+//CREAR UNA FUNCION CONSTRUCTORA Y DEFINIR UN METODO DE INSTANCIA
+
+function PersonaTwo(nombre, apellido, edad, email) {
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.edad = edad;
+  this.email = email;
+
+  this.mostradDatos = function () {
+    console.log('Nombre: ', this.nombre);
+    console.log('Apellido: ', this.apellido);
+    console.log('Edad: ', this.edad);
+    console.log('Email: ', this.email);
+  };
+}
+
+let edward = new PersonaTwo('Edward', 'Ortiz', 39, 'edward@gmail.com');
+let daniela = new PersonaTwo('Daniela', 'Maya', 49, 'daniela@mail.com');
+
+console.log(edward);
+edward.mostradDatos();
+daniela.mostradDatos();
+
+//IMPLEMENTAR UNA JERARQUIA DE HERENCIA CON EXTENDS
+
+class PersonaThree {
+  constructor(nombre, apellido, identificacion) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.identificacion = identificacion;
+  }
+}
+//ahora extiendo esta clase y agrego otras propiedades
+
+class Estudiante extends PersonaThree {
+  constructor(nombre, apellido, identificacion, carnet, carrera, semestre) {
+    super(nombre, apellido, identificacion); //extiende las propiedades del constructor
+
+    this.carnet = carnet;
+    this.carrera = carrera;
+    this.semestre = semestre;
+  }
+}
+
+//ahora extiendo a otra
+class Profesor extends PersonaThree {
+  constructor(nombre, apellido, identificacion, profesion, sueldo) {
+    super(nombre, apellido, identificacion);
+    this.profesion = profesion;
+    this.sueldo = sueldo;
+  }
+}
+
+//CREAR Y EJECUTAR UNA FUNCION ANONIMA
+
+let sumarDeNuevo = function (a, b) {
+  let suma = a + b;
+  return suma;
+};
+
+console.log(sumarDeNuevo(2, 3));
