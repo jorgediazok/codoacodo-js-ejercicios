@@ -2504,179 +2504,338 @@
 // console.log(calcularLongitudNumero(valor)); //OUTPUT 9
 
 //INTERCAMBIAR EL CONTENIDO DE DOS VARIABLES SIN USAR UNA AUXILIAR
-let a = 100;
-let b = 50;
+// let a = 100;
+// let b = 50;
 
-function intercambiarNumeros(num1, num2) {
-  num2 = num2 - num1; // en este momento b es -50
-  num1 = num1 + num2; //en este momento a es 50
-  num2 = num1 - num2; //en este momento b es 100
-  return [num1, num2];
-}
+// function intercambiarNumeros(num1, num2) {
+//   num2 = num2 - num1; // en este momento b es -50
+//   num1 = num1 + num2; //en este momento a es 50
+//   num2 = num1 - num2; //en este momento b es 100
+//   return [num1, num2];
+// }
 
-console.log(intercambiarNumeros(a, b));
+// console.log(intercambiarNumeros(a, b));
 
 //CREAR UN METODO PARA ELIMINAR UN ELEMENTO DE UN ARREGLO
-function eliminarElemento(array, value) {
-  return array.filter((element) => {
-    return element != value;
-  });
-}
+// function eliminarElemento(array, value) {
+//   return array.filter((element) => {
+//     return element != value;
+//   });
+// }
 
-console.log(eliminarElemento([1, 2, 3, 4, 5], 4));
+// console.log(eliminarElemento([1, 2, 3, 4, 5], 4));
 
-//AGREGAR UN ARREGLO AL FINAL DE OTRO
-let numeros1 = [1, 2, 3, 4, 5];
-let numeros2 = [6, 7, 8, 9, 10];
+// //AGREGAR UN ARREGLO AL FINAL DE OTRO
+// let numeros1 = [1, 2, 3, 4, 5];
+// let numeros2 = [6, 7, 8, 9, 10];
 
-let resultado = numeros1.concat(numeros2);
-console.log(resultado); //output [1,2,3,4,5,6,7,8,9,10]
+// let resultado = numeros1.concat(numeros2);
+// console.log(resultado); //output [1,2,3,4,5,6,7,8,9,10]
 
 //INVERTIR EL ORDEN DE LOS ELEMENTOS DE UN ARRAY
 
-let numerosOrdenadosAlDerecho = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let numerosOrdenadosAlReves = numerosOrdenadosAlDerecho.reverse();
-console.log(numerosOrdenadosAlReves); //output [9,8,7,6,5,4,3,2,1]
+// let numerosOrdenadosAlDerecho = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let numerosOrdenadosAlReves = numerosOrdenadosAlDerecho.reverse();
+// console.log(numerosOrdenadosAlReves); //output [9,8,7,6,5,4,3,2,1]
 
 //USO BASICO DEL OPERADOR SPREAD
 
-function sumar(a, b, c) {
-  return a + b + c;
-}
+// function sumar(a, b, c) {
+//   return a + b + c;
+// }
 
-let numerosSpread = [1, 2, 3];
-let sumaSpread = sumar(...numerosSpread);
+// let numerosSpread = [1, 2, 3];
+// let sumaSpread = sumar(...numerosSpread);
 
-console.log(sumaSpread);
+// console.log(sumaSpread);
 
 //ORDENAR UN ARRAY CON LA FUNCION SORT
 
-let numerosSort = [12, 82, 32, 16, 8, 99, 35, 1];
-let numerosSorteados = numerosSort.sort();
-console.log(numerosSorteados); //SIRVE PARA ORDENAR ALFABETICAMENTE
+// let numerosSort = [12, 82, 32, 16, 8, 99, 35, 1];
+// let numerosSorteados = numerosSort.sort();
+// console.log(numerosSorteados); //SIRVE PARA ORDENAR ALFABETICAMENTE
 
 //COMPROBAR QUE TODOS LOS ELEMENTOS DE UN ARRAY CUMPLAN UNA CONDICION
 
-let arrayEveryNumbers = [3, 7, 2, 1, 9, 11, 13];
-let resultadoDeArrayEveryNumbers = arrayEveryNumbers.every((value) => {
-  return value > 2;
-});
-console.log(resultadoDeArrayEveryNumbers); //output false porque hay un 1
+// let arrayEveryNumbers = [3, 7, 2, 1, 9, 11, 13];
+// let resultadoDeArrayEveryNumbers = arrayEveryNumbers.every((value) => {
+//   return value > 2;
+// });
+// console.log(resultadoDeArrayEveryNumbers); //output false porque hay un 1
 
 //COMPROBAR QUE ALGUNOS DE LOS ELEMENTOS DE UN ARRAY CUMPLAN UNA CONDICION
 
-let resultadoDeArraySomeNumbers = arrayEveryNumbers.some((value) => {
-  return value > 2;
-});
-console.log(resultadoDeArraySomeNumbers); //output true porque algunos son mayores a 2
+// let resultadoDeArraySomeNumbers = arrayEveryNumbers.some((value) => {
+//   return value > 2;
+// });
+// console.log(resultadoDeArraySomeNumbers); //output true porque algunos son mayores a 2
 
 //USAR REDUCE PARA SUMAR LOS NUMEROS DE UN ARRAY
 
-let numerosSinReduce = [1, 5, 8, 4, 13];
-let numerosConReduce = numerosSinReduce.reduce((acc, val) => {
-  return acc + val;
-}, 0);
+// let numerosSinReduce = [1, 5, 8, 4, 13];
+// let numerosConReduce = numerosSinReduce.reduce((acc, val) => {
+//   return acc + val;
+// }, 0);
 
-console.log(numerosConReduce); //output 31
+// console.log(numerosConReduce); //output 31
 
 //ENCONTRAR LOS ELEMENTOS UNICOS DE UN ARRAY CON LA FUNCION FILTER
 
-let numerosNoUnicos = [1, 2, 2, 3, 3, 4, 5, 5, 6, 6, 6, 7, 8];
+// let numerosNoUnicos = [1, 2, 2, 3, 3, 4, 5, 5, 6, 6, 6, 7, 8];
 
-let numerosUnicos = numerosNoUnicos.filter((value, index, array) => {
-  return array.indexOf(value) === index;
-});
+// let numerosUnicos = numerosNoUnicos.filter((value, index, array) => {
+//   return array.indexOf(value) === index;
+// });
 
-console.log(numerosUnicos); //Output: 1,2,3,4,5,6,7,8
+// console.log(numerosUnicos); //Output: 1,2,3,4,5,6,7,8
 
 //CREAR UNA CLASE PERSONALIZADA
 
-class Persona {
-  constructor(nombre, apellido, edad, email) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.edad = edad;
-    this.email = email;
-  }
+// class Persona {
+//   constructor(nombre, apellido, edad, email) {
+//     this.nombre = nombre;
+//     this.apellido = apellido;
+//     this.edad = edad;
+//     this.email = email;
+//   }
 
-  mostrarDatos() {
-    console.log('Nombre', this.nombre);
-    console.log('Apellido', this.apellido);
-    console.log('Edad', this.edad);
-    console.log('Email', this.email);
-  }
-}
+//   mostrarDatos() {
+//     console.log('Nombre', this.nombre);
+//     console.log('Apellido', this.apellido);
+//     console.log('Edad', this.edad);
+//     console.log('Email', this.email);
+//   }
+// }
 
-let persona = new Persona('Juan', 'Ortiz', 38, 'juan@mail.com');
-console.log(persona);
-persona.mostrarDatos();
+// let persona = new Persona('Juan', 'Ortiz', 38, 'juan@mail.com');
+// console.log(persona);
+// persona.mostrarDatos();
 
-//CREAR UNA FUNCION CONSTRUCTORA Y DEFINIR UN METODO DE INSTANCIA
+// //CREAR UNA FUNCION CONSTRUCTORA Y DEFINIR UN METODO DE INSTANCIA
 
-function PersonaTwo(nombre, apellido, edad, email) {
-  this.nombre = nombre;
-  this.apellido = apellido;
-  this.edad = edad;
-  this.email = email;
+// function PersonaTwo(nombre, apellido, edad, email) {
+//   this.nombre = nombre;
+//   this.apellido = apellido;
+//   this.edad = edad;
+//   this.email = email;
 
-  this.mostradDatos = function () {
-    console.log('Nombre: ', this.nombre);
-    console.log('Apellido: ', this.apellido);
-    console.log('Edad: ', this.edad);
-    console.log('Email: ', this.email);
-  };
-}
+//   this.mostradDatos = function () {
+//     console.log('Nombre: ', this.nombre);
+//     console.log('Apellido: ', this.apellido);
+//     console.log('Edad: ', this.edad);
+//     console.log('Email: ', this.email);
+//   };
+// }
 
-let edward = new PersonaTwo('Edward', 'Ortiz', 39, 'edward@gmail.com');
-let daniela = new PersonaTwo('Daniela', 'Maya', 49, 'daniela@mail.com');
+// let edward = new PersonaTwo('Edward', 'Ortiz', 39, 'edward@gmail.com');
+// let daniela = new PersonaTwo('Daniela', 'Maya', 49, 'daniela@mail.com');
 
-console.log(edward);
-edward.mostradDatos();
-daniela.mostradDatos();
+// console.log(edward);
+// edward.mostradDatos();
+// daniela.mostradDatos();
 
 //IMPLEMENTAR UNA JERARQUIA DE HERENCIA CON EXTENDS
 
-class PersonaThree {
-  constructor(nombre, apellido, identificacion) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.identificacion = identificacion;
-  }
-}
+// class PersonaThree {
+//   constructor(nombre, apellido, identificacion) {
+//     this.nombre = nombre;
+//     this.apellido = apellido;
+//     this.identificacion = identificacion;
+//   }
+// }
 //ahora extiendo esta clase y agrego otras propiedades
 
-class Estudiante extends PersonaThree {
-  constructor(nombre, apellido, identificacion, carnet, carrera, semestre) {
-    super(nombre, apellido, identificacion); //extiende las propiedades del constructor
+// class Estudiante extends PersonaThree {
+//   constructor(nombre, apellido, identificacion, carnet, carrera, semestre) {
+//     super(nombre, apellido, identificacion); //extiende las propiedades del constructor
 
-    this.carnet = carnet;
-    this.carrera = carrera;
-    this.semestre = semestre;
+//     this.carnet = carnet;
+//     this.carrera = carrera;
+//     this.semestre = semestre;
+//   }
+// }
+
+// //ahora extiendo a otra
+// class Profesor extends PersonaThree {
+//   constructor(nombre, apellido, identificacion, profesion, sueldo) {
+//     super(nombre, apellido, identificacion);
+//     this.profesion = profesion;
+//     this.sueldo = sueldo;
+//   }
+// }
+
+//CREAR Y EJECUTAR UNA FUNCION ANONIMA
+
+// let sumarDeNuevo = function (a, b) {
+//   let suma = a + b;
+//   return suma;
+// };
+
+// console.log(sumarDeNuevo(2, 3));
+
+//CREAR Y EJECUTAR UNA FUNCION ANONIMA
+// let sumarAgain = function (a, b) {
+//   let suma = a + b;
+//   return suma;
+// };
+
+// console.log(sumarAgain(3, 4));
+
+//OBJECT DESTRUCTURING
+
+// function obtenerNombreEs6({ nombre, apellido, edad }) {
+//   console.log(nombre, apellido, edad);
+// }
+
+// let personaFour = { nombre: 'Daniela', apellido: 'Ortiz', edad: 32 };
+
+// obtenerNombreEs6(personaFour);
+
+//PASAR ARGUMENTOS A UNA FUNCION IIFE
+
+// let numerosParaIIFE = [1, 2, 3, 4, 5];
+
+// let resultadoIfe = (function (valores) {
+//   return valores.reduce((acc, val) => {
+//     return acc + val;
+//   });
+// })(numerosParaIIFE);
+
+// console.log(resultadoIfe);
+
+//CREAR UNA FUNCION FLECHA ESTANDAR
+
+// let sumarNumerosFlecha = (a, b) => a + b;
+
+// console.log(sumarNumerosFlecha(2, 5));
+
+// let reducirNumerosFlecha = numerosParaIIFE.reduce((acc, val) => acc + val);
+
+// console.log(reducirNumerosFlecha);
+
+//CREAR UNA CALLBACK Y PASARLA A OTRA FUNCION
+
+// function buscar(dni, fn) {
+//   console.log(dni);
+//   setTimeout(() => {
+//     fn('Jorge Manuel');
+//   }, 2000);
+// }
+
+// buscar('1234834', (nombre) => {
+//   console.log(nombre);
+// });
+
+//PRACTICE WITH THIS
+//1er caso. This apunta al objeto global o window
+this.z = 5;
+console.log(this.z); //OUTPUT: 5
+
+//2do caso. Apunta al padre. Cual es el padre de la funcion? Window object again. Por eso da como resultado 8. Da el mismo resultado si es una arrow function.
+this.s = 8;
+function getParam() {
+  console.log(this.s);
+}
+const getParamArrow = () => {
+  console.log(this.s);
+};
+getParam(); //OUTPUT:8;
+getParamArrow(); //OUTPUT:8
+
+//3er caso. //Estamos adentro de un objeto ahora, asique el this va a apuntar no a la window sino al objeto (user)
+
+let user = {
+  name: 'Jorge',
+  age: 38,
+  getDetails() {
+    console.log(this.name);
+  },
+};
+
+user.getDetails(); //OUTPUT:Jorge
+
+//4to caso. Que pasa si ahora la funcion getDetails esta adentro nested de otro objeto?
+
+let userTwo = {
+  name: 'Jorge',
+  age: 38,
+  childObj: {
+    newName: 'Coder Coder',
+    getDetails() {
+      console.log(this.newName, 'and', this.name);
+    },
+  },
+};
+
+userTwo.childObj.getDetails(); //OUTPUT: "Coder Coder and Undefined". Por que
+//da undefined? Porque el padre es childObj y no hay un name en el padre. No
+//tiene acceso al name que esta un nivel mas arriba, solo al padre más cercano
+
+//5to caso. Con una arrow function, que retorna ahora? NADA. Porque apunta a window. Y en este caso en window no hay nada como habia en el caso 1 que habia una global.
+
+let userThree = {
+  name: 'Jorge',
+  age: 38,
+  getDetails: () => {
+    console.log(this.name);
+  },
+};
+
+userThree.getDetails(); //OUTPUT:NADA
+
+//6to caso. Con una arrow function pero ahora dentro de un padre. En este caso retorna Jorge porque ahora si esta apuntando al elemento padre que es userFour.
+
+let userFour = {
+  name: 'Jorge',
+  age: 38,
+  getDetails() {
+    const nestedArrowFunction = () => console.log(this.name);
+    nestedArrowFunction();
+  },
+};
+
+userFour.getDetails(); //OUTPUT:Jorge.
+
+//7to caso. Con una clase el uso del this. En este caso apunta al padre que es el constructor.
+
+class userFive {
+  constructor(n) {
+    this.name = n;
+  }
+
+  getName() {
+    console.log(this.name);
   }
 }
 
-//ahora extiendo a otra
-class Profesor extends PersonaThree {
-  constructor(nombre, apellido, identificacion, profesion, sueldo) {
-    super(nombre, apellido, identificacion);
-    this.profesion = profesion;
-    this.sueldo = sueldo;
-  }
+const UserFive = new userFive('Jorge');
+console.log(UserFive); //OUTPUT userfive{name:"Jorge"}
+
+//8vo caso (de los mas preguntados).
+
+const userSix = {
+  firstName: 'Jorge',
+  getName() {
+    const firstName = 'Jorge Dv';
+    return this.firstName;
+  },
+};
+
+console.log(userSix.getName()); //OUTPUT JORGE. Pero no el Jorge del getName sino el que esta en user. Cuando el getName retorna this.firstName ese this está apuntando al padre (userSix) e ignora el de su interior.
+
+//9vo caso el resultado de acceder con ref y por que.
+
+function makeUser() {
+  return {
+    name: 'John',
+    ref: this,
+    // ref() {
+    //   return this; //ESTO SOLUCIONA EL PROBLEMA Y LOGUEA JOHN
+    // },
+  };
 }
 
-//CREAR Y EJECUTAR UNA FUNCION ANONIMA
+let userSeven = makeUser();
+console.log(userSeven.ref.name); //OUTPUT: EMPTY. Porque ? porque si bien el ref esta apuntando al makeUser que es su padre, al llamarlo desde afuera, pasa a apuntar a la window global entonces no existe ningun name ahi y retorna nada.
 
-let sumarDeNuevo = function (a, b) {
-  let suma = a + b;
-  return suma;
-};
-
-console.log(sumarDeNuevo(2, 3));
-
-//CREAR Y EJECUTAR UNA FUNCION ANONIMA
-let sumarAgain = function (a, b) {
-  let suma = a + b;
-  return suma;
-};
-
-console.log(sumarAgain(3, 4));
+//10mo caso.
