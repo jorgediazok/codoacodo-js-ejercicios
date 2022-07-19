@@ -2672,3 +2672,11 @@ let sumarDeNuevo = function (a, b) {
 };
 
 console.log(sumarDeNuevo(2, 3));
+
+//CREAR Y EJECUTAR UNA FUNCION ANONIMA
+let sumarAgain = function (a, b) {
+  let suma = a + b;
+  return suma;
+};
+
+console.log(sumarAgain(3, 4));
