@@ -2838,4 +2838,152 @@ function makeUser() {
 let userSeven = makeUser();
 console.log(userSeven.ref.name); //OUTPUT: EMPTY. Porque ? porque si bien el ref esta apuntando al makeUser que es su padre, al llamarlo desde afuera, pasa a apuntar a la window global entonces no existe ningun name ahi y retorna nada.
 
-//10mo caso.
+//10mo caso. CUal es el output?
+
+// const userNine = {
+//   name: 'Jorge Dev',
+//   logMessage() {
+//     console.log(this.name); //what is logged?
+//   },
+// };
+
+// setTimeout(userNine.logMessage, 1000); //DA OUTPUT VACIO porque va al window object y window object no tiene nada igual a name. Para arreglarlo hay que hacer lo sigiuente:
+// setTimeout(function () {
+//   userNine.logMessage();
+// }, 1000); //Con esto agregandole una callback solucionas el problema
+
+//11vo caso. Cual es el output?
+
+const userTen = {
+  name: 'Jorge Ten',
+  greet() {
+    return `Hello, ${this.name}`; //Funcion normal, apunta al user, por eso funciona
+  },
+  farewell: () => {
+    return `Goodbye, ${this.name}`; //Funcion flecha, apunta a la ventana objeto
+  },
+};
+
+console.log(userTen.greet()); //OUTPUT Hello, Jorge Ten
+console.log(userTen.farewell()); //OUTPUT Goodbye, (empty)
+
+//12vo caso. Crear un object calculator
+
+let calculator = {
+  read() {
+    this.a = +prompt('a = ', 0);
+    this.b = +prompt('b = ', 0);
+  },
+  sum() {
+    return this.a + this.b;
+  },
+  mul() {
+    return this.a * this.b;
+  },
+};
+
+// calculator.read();
+// console.log(calculator.sum()); //output bien devuelve la suma
+// console.log(calculator.mul()); //output bien devuelve la multiplicacion
+
+//13vo caso. Cual es el output?
+
+var length = 4;
+
+function callback() {
+  console.log(this.length); //what is logged?
+}
+
+const object = {
+  length: 5,
+  method(fn) {
+    fn();
+  },
+};
+
+object.method(callback); //output 4. En teoria la funcion method apunta a object entonces deberia targetear ese objeto, pero como es llamada AHI MISMO, lo que hace es cambiar y llamar al global object. pPor eso lo que hace es llamar al length 4 y no al 5.
+
+//PREGUNTAS SOBRE FUNCTIONS
+//Que es una first class function? Bueno ponele que queremos pasarle una funcion por parametros a otra funcion, me quedaria algo asi
+
+function square(num) {
+  return num * num;
+}
+
+function displaySquare(fn) {
+  console.log('Square is ' + fn(5));
+}
+
+displaySquare(square); //LLAMO ESA FUNCION OUTPUT 25
+
+//Que es una ifee? Es una funcion que se llama as i misma.
+
+(function squareTwo(num) {
+  console.log(num * num);
+})(5);
+
+//Que pasa con esta ifee adentro de otra ifee? que output tira?
+
+// (function (x) {
+//   return (function (y) {
+//     console.log(x); //CUAL ES EL OUTPUT
+//   })(2);
+// })(1); //Nos da el output de 1 porque primero va a buscar si x existe en su padre pero como no existe(existe y en el parametro nomas), busca en su padre, y ahi encuentra x y el parametro que le pasa a x es 1, por eso da eso. Esto pasa por el CLOSURE.
+
+//SCOPE
+
+var num1 = 20;
+var num2 = 3;
+var name = 'Jorge Coder';
+
+function multiply() {
+  return num1 * num2;
+}
+
+console.log(multiply()); //OUTPUT 60. Toma los valores de las variables globales.
+
+function getScore() {
+  var num1 = 2;
+  var num2 = 3;
+
+  function add() {
+    return name + ' scored ' + (num1 + num2);
+  }
+
+  return add();
+}
+
+console.log(getScore()); //OUTPUT "Jorge Coder scored 5". No encuentra name entonces va y lo busca globalemente y lo encuentra. Pero con var, encuentra que en su mismo padre en el local scope existe entonces toma esos valores y devuelve 5 y no 23.
+
+//Otra pregunta sobre scope. Que retorna esta funcion?
+// for (let i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 1000);
+// } //OUTPUT. Cuenta de 0 a 4 y entre una y otro deja pasar un segundo. Pero si en vez de let fuera var, contaría solamente 5 (durante 5 veces), porque no reconocería el block scope.
+
+//<--------------------------------HOISTING--------------------------------------->
+
+functionName(); //ESTO SE PUEDE HACER SE PUEDE LLAMAR UNA FUNCION ANTES
+
+function functionName() {
+  console.log('workinggg');
+}
+
+//AHORA NO PUEDO HACER ESTO, DA UNDEFINED (CON LET Y CONST DA ERROR). Por que da undefined y no error? porque con el hoisting, que significa ELEVACION, te eleva la declaracion de esa variable CON VAR x y te la pone más arriba; Por eso no se recomienda usar var porque puede traer inconvenientes de scope.
+
+// console.log(x);
+let x = 5;
+
+//Aclaración: si esto mismo se reproduciera en el interior de la funcion functionName tambien la x va a dar undefined, va a seguir funcionando, te eleva la variable al inicio de la funcion
+
+//Veamos otro ejemplo
+
+var z = 21;
+
+var fun = function () {
+  console.log(z);
+  var z = 20;
+};
+
+fun(); //OUTPUT: undefined. Por que? Porque la z si bien esta en global, javascript primero toma la que esta en su scope, le da prioridad a esa, y como en su scope esta declarada despues de ser llamada entonces da undefined.
