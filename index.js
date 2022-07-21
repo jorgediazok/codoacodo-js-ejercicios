@@ -2728,115 +2728,115 @@
 
 //PRACTICE WITH THIS
 //1er caso. This apunta al objeto global o window
-this.z = 5;
-console.log(this.z); //OUTPUT: 5
+// this.z = 5;
+// console.log(this.z); //OUTPUT: 5
 
 //2do caso. Apunta al padre. Cual es el padre de la funcion? Window object again. Por eso da como resultado 8. Da el mismo resultado si es una arrow function.
-this.s = 8;
-function getParam() {
-  console.log(this.s);
-}
-const getParamArrow = () => {
-  console.log(this.s);
-};
-getParam(); //OUTPUT:8;
-getParamArrow(); //OUTPUT:8
+// this.s = 8;
+// function getParam() {
+//   console.log(this.s);
+// }
+// const getParamArrow = () => {
+//   console.log(this.s);
+// };
+// getParam(); //OUTPUT:8;
+// getParamArrow(); //OUTPUT:8
 
 //3er caso. //Estamos adentro de un objeto ahora, asique el this va a apuntar no a la window sino al objeto (user)
 
-let user = {
-  name: 'Jorge',
-  age: 38,
-  getDetails() {
-    console.log(this.name);
-  },
-};
+// let user = {
+//   name: 'Jorge',
+//   age: 38,
+//   getDetails() {
+//     console.log(this.name);
+//   },
+// };
 
-user.getDetails(); //OUTPUT:Jorge
+// user.getDetails(); //OUTPUT:Jorge
 
 //4to caso. Que pasa si ahora la funcion getDetails esta adentro nested de otro objeto?
 
-let userTwo = {
-  name: 'Jorge',
-  age: 38,
-  childObj: {
-    newName: 'Coder Coder',
-    getDetails() {
-      console.log(this.newName, 'and', this.name);
-    },
-  },
-};
+// let userTwo = {
+//   name: 'Jorge',
+//   age: 38,
+//   childObj: {
+//     newName: 'Coder Coder',
+//     getDetails() {
+//       console.log(this.newName, 'and', this.name);
+//     },
+//   },
+// };
 
-userTwo.childObj.getDetails(); //OUTPUT: "Coder Coder and Undefined". Por que
+// userTwo.childObj.getDetails(); //OUTPUT: "Coder Coder and Undefined". Por que
 //da undefined? Porque el padre es childObj y no hay un name en el padre. No
 //tiene acceso al name que esta un nivel mas arriba, solo al padre más cercano
 
 //5to caso. Con una arrow function, que retorna ahora? NADA. Porque apunta a window. Y en este caso en window no hay nada como habia en el caso 1 que habia una global.
 
-let userThree = {
-  name: 'Jorge',
-  age: 38,
-  getDetails: () => {
-    console.log(this.name);
-  },
-};
+// let userThree = {
+//   name: 'Jorge',
+//   age: 38,
+//   getDetails: () => {
+//     console.log(this.name);
+//   },
+// };
 
-userThree.getDetails(); //OUTPUT:NADA
+// userThree.getDetails(); //OUTPUT:NADA
 
 //6to caso. Con una arrow function pero ahora dentro de un padre. En este caso retorna Jorge porque ahora si esta apuntando al elemento padre que es userFour.
 
-let userFour = {
-  name: 'Jorge',
-  age: 38,
-  getDetails() {
-    const nestedArrowFunction = () => console.log(this.name);
-    nestedArrowFunction();
-  },
-};
+// let userFour = {
+//   name: 'Jorge',
+//   age: 38,
+//   getDetails() {
+//     const nestedArrowFunction = () => console.log(this.name);
+//     nestedArrowFunction();
+//   },
+// };
 
-userFour.getDetails(); //OUTPUT:Jorge.
+// userFour.getDetails(); //OUTPUT:Jorge.
 
 //7to caso. Con una clase el uso del this. En este caso apunta al padre que es el constructor.
 
-class userFive {
-  constructor(n) {
-    this.name = n;
-  }
+// class userFive {
+//   constructor(n) {
+//     this.name = n;
+//   }
 
-  getName() {
-    console.log(this.name);
-  }
-}
+//   getName() {
+//     console.log(this.name);
+//   }
+// }
 
-const UserFive = new userFive('Jorge');
-console.log(UserFive); //OUTPUT userfive{name:"Jorge"}
+// const UserFive = new userFive('Jorge');
+// console.log(UserFive); //OUTPUT userfive{name:"Jorge"}
 
 //8vo caso (de los mas preguntados).
 
-const userSix = {
-  firstName: 'Jorge',
-  getName() {
-    const firstName = 'Jorge Dv';
-    return this.firstName;
-  },
-};
+// const userSix = {
+//   firstName: 'Jorge',
+//   getName() {
+//     const firstName = 'Jorge Dv';
+//     return this.firstName;
+//   },
+// };
 
-console.log(userSix.getName()); //OUTPUT JORGE. Pero no el Jorge del getName sino el que esta en user. Cuando el getName retorna this.firstName ese this está apuntando al padre (userSix) e ignora el de su interior.
+// console.log(userSix.getName()); //OUTPUT JORGE. Pero no el Jorge del getName sino el que esta en user. Cuando el getName retorna this.firstName ese this está apuntando al padre (userSix) e ignora el de su interior.
 
 //9vo caso el resultado de acceder con ref y por que.
 
-function makeUser() {
-  return {
-    name: 'John',
-    ref: this,
-    // ref() {
-    //   return this; //ESTO SOLUCIONA EL PROBLEMA Y LOGUEA JOHN
-    // },
-  };
-}
+// function makeUser() {
+//   return {
+//     name: 'John',
+//     ref: this,
+//     // ref() {
+//     //   return this; //ESTO SOLUCIONA EL PROBLEMA Y LOGUEA JOHN
+//     // },
+//   };
+// }
 
-let userSeven = makeUser();
-console.log(userSeven.ref.name); //OUTPUT: EMPTY. Porque ? porque si bien el ref esta apuntando al makeUser que es su padre, al llamarlo desde afuera, pasa a apuntar a la window global entonces no existe ningun name ahi y retorna nada.
+// let userSeven = makeUser();
+// console.log(userSeven.ref.name); //OUTPUT: EMPTY. Porque ? porque si bien el ref esta apuntando al makeUser que es su padre, al llamarlo desde afuera, pasa a apuntar a la window global entonces no existe ningun name ahi y retorna nada.
 
 //10mo caso. CUal es el output?
 
@@ -2854,33 +2854,33 @@ console.log(userSeven.ref.name); //OUTPUT: EMPTY. Porque ? porque si bien el ref
 
 //11vo caso. Cual es el output?
 
-const userTen = {
-  name: 'Jorge Ten',
-  greet() {
-    return `Hello, ${this.name}`; //Funcion normal, apunta al user, por eso funciona
-  },
-  farewell: () => {
-    return `Goodbye, ${this.name}`; //Funcion flecha, apunta a la ventana objeto
-  },
-};
+// const userTen = {
+//   name: 'Jorge Ten',
+//   greet() {
+//     return `Hello, ${this.name}`; //Funcion normal, apunta al user, por eso funciona
+//   },
+//   farewell: () => {
+//     return `Goodbye, ${this.name}`; //Funcion flecha, apunta a la ventana objeto
+//   },
+// };
 
-console.log(userTen.greet()); //OUTPUT Hello, Jorge Ten
-console.log(userTen.farewell()); //OUTPUT Goodbye, (empty)
+// console.log(userTen.greet()); //OUTPUT Hello, Jorge Ten
+// console.log(userTen.farewell()); //OUTPUT Goodbye, (empty)
 
 //12vo caso. Crear un object calculator
 
-let calculator = {
-  read() {
-    this.a = +prompt('a = ', 0);
-    this.b = +prompt('b = ', 0);
-  },
-  sum() {
-    return this.a + this.b;
-  },
-  mul() {
-    return this.a * this.b;
-  },
-};
+// let calculator = {
+//   read() {
+//     this.a = +prompt('a = ', 0);
+//     this.b = +prompt('b = ', 0);
+//   },
+//   sum() {
+//     return this.a + this.b;
+//   },
+//   mul() {
+//     return this.a * this.b;
+//   },
+// };
 
 // calculator.read();
 // console.log(calculator.sum()); //output bien devuelve la suma
@@ -2888,39 +2888,39 @@ let calculator = {
 
 //13vo caso. Cual es el output?
 
-var length = 4;
+// var length = 4;
 
-function callback() {
-  console.log(this.length); //what is logged?
-}
+// function callback() {
+//   console.log(this.length); //what is logged?
+// }
 
-const object = {
-  length: 5,
-  method(fn) {
-    fn();
-  },
-};
+// const object = {
+//   length: 5,
+//   method(fn) {
+//     fn();
+//   },
+// };
 
-object.method(callback); //output 4. En teoria la funcion method apunta a object entonces deberia targetear ese objeto, pero como es llamada AHI MISMO, lo que hace es cambiar y llamar al global object. pPor eso lo que hace es llamar al length 4 y no al 5.
+// object.method(callback); //output 4. En teoria la funcion method apunta a object entonces deberia targetear ese objeto, pero como es llamada AHI MISMO, lo que hace es cambiar y llamar al global object. pPor eso lo que hace es llamar al length 4 y no al 5.
 
 //PREGUNTAS SOBRE FUNCTIONS
 //Que es una first class function? Bueno ponele que queremos pasarle una funcion por parametros a otra funcion, me quedaria algo asi
 
-function square(num) {
-  return num * num;
-}
+// function square(num) {
+//   return num * num;
+// }
 
-function displaySquare(fn) {
-  console.log('Square is ' + fn(5));
-}
+// function displaySquare(fn) {
+//   console.log('Square is ' + fn(5));
+// }
 
-displaySquare(square); //LLAMO ESA FUNCION OUTPUT 25
+// displaySquare(square); //LLAMO ESA FUNCION OUTPUT 25
 
 //Que es una ifee? Es una funcion que se llama as i misma.
 
-(function squareTwo(num) {
-  console.log(num * num);
-})(5);
+// (function squareTwo(num) {
+//   console.log(num * num);
+// })(5);
 
 //Que pasa con esta ifee adentro de otra ifee? que output tira?
 
@@ -2932,28 +2932,28 @@ displaySquare(square); //LLAMO ESA FUNCION OUTPUT 25
 
 //SCOPE
 
-var num1 = 20;
-var num2 = 3;
-var name = 'Jorge Coder';
+// var num1 = 20;
+// var num2 = 3;
+// var name = 'Jorge Coder';
 
-function multiply() {
-  return num1 * num2;
-}
+// function multiply() {
+//   return num1 * num2;
+// }
 
-console.log(multiply()); //OUTPUT 60. Toma los valores de las variables globales.
+// console.log(multiply()); //OUTPUT 60. Toma los valores de las variables globales.
 
-function getScore() {
-  var num1 = 2;
-  var num2 = 3;
+// function getScore() {
+//   var num1 = 2;
+//   var num2 = 3;
 
-  function add() {
-    return name + ' scored ' + (num1 + num2);
-  }
+//   function add() {
+//     return name + ' scored ' + (num1 + num2);
+//   }
 
-  return add();
-}
+//   return add();
+// }
 
-console.log(getScore()); //OUTPUT "Jorge Coder scored 5". No encuentra name entonces va y lo busca globalemente y lo encuentra. Pero con var, encuentra que en su mismo padre en el local scope existe entonces toma esos valores y devuelve 5 y no 23.
+// console.log(getScore()); //OUTPUT "Jorge Coder scored 5". No encuentra name entonces va y lo busca globalemente y lo encuentra. Pero con var, encuentra que en su mismo padre en el local scope existe entonces toma esos valores y devuelve 5 y no 23.
 
 //Otra pregunta sobre scope. Que retorna esta funcion?
 // for (let i = 0; i < 5; i++) {
@@ -2964,26 +2964,134 @@ console.log(getScore()); //OUTPUT "Jorge Coder scored 5". No encuentra name ento
 
 //<--------------------------------HOISTING--------------------------------------->
 
-functionName(); //ESTO SE PUEDE HACER SE PUEDE LLAMAR UNA FUNCION ANTES
+// functionName(); //ESTO SE PUEDE HACER SE PUEDE LLAMAR UNA FUNCION ANTES
 
-function functionName() {
-  console.log('workinggg');
-}
+// function functionName() {
+//   console.log('workinggg');
+// }
 
 //AHORA NO PUEDO HACER ESTO, DA UNDEFINED (CON LET Y CONST DA ERROR). Por que da undefined y no error? porque con el hoisting, que significa ELEVACION, te eleva la declaracion de esa variable CON VAR x y te la pone más arriba; Por eso no se recomienda usar var porque puede traer inconvenientes de scope.
 
 // console.log(x);
-let x = 5;
+// let x = 5;
 
 //Aclaración: si esto mismo se reproduciera en el interior de la funcion functionName tambien la x va a dar undefined, va a seguir funcionando, te eleva la variable al inicio de la funcion
 
 //Veamos otro ejemplo
 
-var z = 21;
+// var z = 21;
 
-var fun = function () {
-  console.log(z);
-  var z = 20;
-};
+// var fun = function () {
+//   console.log(z);
+//   var z = 20;
+// };
 
-fun(); //OUTPUT: undefined. Por que? Porque la z si bien esta en global, javascript primero toma la que esta en su scope, le da prioridad a esa, y como en su scope esta declarada despues de ser llamada entonces da undefined.
+// fun(); //OUTPUT: undefined. Por que? Porque la z si bien esta en global, javascript primero toma la que esta en su scope, le da prioridad a esa, y como en su scope esta declarada despues de ser llamada entonces da undefined.
+
+///CALLBACK FUNCTION--------------------------------------->
+// document.addEventListener('click', function (params) {}); //
+//otro ejemplo
+// function exito() {
+//   console.log('La función se ejecutó satisfactoriamente.');
+// }
+
+// function fallo() {
+//   console.log('La función falló.');
+// }
+
+// function ejecutarProceso(nombre, exito, fallo) {
+//   if (nombre === 'Edward') {
+//     exito();
+//   } else {
+//     fallo();
+//   }
+// }
+
+// ejecutarProceso('Edward', exito, fallo);
+
+//CREAR UNA CLASE DE ERROR PERSONALIZADO HEREDANDO DE ERROR
+
+// class DivisionEntreCeroError extends Error {
+//   constructor(mensaje) {
+//     super(mensaje);
+//   }
+// }
+
+// function dividir(a, b) {
+//   try {
+//     if (b !== 0) {
+//       return a / b;
+//     }
+//     throw new DivisionEntreCeroError('La división con 0 no está permitida');
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// dividir(5, 0);
+
+//REALIZAR UNA PETICION GET CON LA API FETCH
+
+// let url = 'https://randomuser.me/api/?results=10';
+
+// fetch(url)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data.results);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+//
+
+//REALIZAR UNA PETICION GET DE UN USUARIO DE GITHUB
+
+let url = 'https://api.github.com/users/jorgediazok';
+
+// fetch(url)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => console.log(error));
+
+//USAR LA LIBRERIA REQUEST DE NODE.JS PARA PETICIONES ASINCRONAS
+
+// const request = require('request');
+
+// request(url, (error, response, body) => {
+//   if (error) {
+//     throw error;
+//   }
+//   let resultado = JSON.parse(body);
+
+//   console.log(resultado);
+// });
+
+//CREAR OBJETO PROMISE PARA EJECUCION ASINCRONA
+
+let promesa = new Promise(function (resolve, reject) {
+  const a = 1;
+  const b = 1;
+
+  if (a === b) {
+    resolve();
+  } else {
+    reject();
+  }
+});
+
+promesa
+  .then(function () {
+    console.log('La ejecución ha sido satisfactoria.');
+  })
+  .catch(function () {
+    console.log('La ejecución ha fallado.');
+  });
+
+//UNA CALLBACK EN UN SETTIMEOUT
+
+setTimeout(() => {
+  console.log('Se ha llamado a la callback correctamente.');
+}, 1000);
