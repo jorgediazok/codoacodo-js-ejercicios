@@ -3095,3 +3095,21 @@ promesa
 setTimeout(() => {
   console.log('Se ha llamado a la callback correctamente.');
 }, 1000);
+
+//UNA CALLBACK LLAMADA POR SETTIMEOUT
+
+function mostrarMensje() {
+  console.log('Se ha ejecutado el callback de manera satisfactoria.');
+}
+
+setTimeout(mostrarMensje, 3000);
+
+//THIS IS REDUCE
+
+const arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+const arrayOfNumbersReduced = arrayOfNumbers.reduce((acc, value) => {
+  return acc + value;
+}, 0);
+
+console.log(arrayOfNumbersReduced);
