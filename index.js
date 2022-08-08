@@ -3113,3 +3113,11 @@ const arrayOfNumbersReduced = arrayOfNumbers.reduce((acc, value) => {
 }, 0);
 
 console.log(arrayOfNumbersReduced);
+
+//UNA FILTER
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
