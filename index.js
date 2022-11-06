@@ -3128,122 +3128,176 @@ let url = 'https://api.github.com/users/jorgediazok';
 
 //EL CONTEXTO ES EL OBJETO QUE EJECUTA UNA FUNCION EN UN MOMENTO ESPECÍFICO
 
-const harry = {
-  nombre: 'Harry',
-  saludar: function () {
-    console.log(`Hola, me llamo ${this.nombre}`);
-  },
-};
+// const harry = {
+//   nombre: 'Harry',
+//   saludar: function () {
+//     console.log(`Hola, me llamo ${this.nombre}`);
+//   },
+// };
 
-harry.saludar(); //Retorna Hola, me llamo Harry. Es el ejemplo típico con el this.
+// harry.saludar(); //Retorna Hola, me llamo Harry. Es el ejemplo típico con el this.
 
-//ahora qué pasa si guardamos el método en una variable y la invocamos?
+// //ahora qué pasa si guardamos el método en una variable y la invocamos?
 
-const saludar = harry.saludar;
-saludar(); //Retorna Hola, me llamo undefined.
+// const saludar = harry.saludar;
+// saludar(); //Retorna Hola, me llamo undefined.
 
-//CUAL SERIA EL PROBLEMA?
-//This es el objeto que ejecuta la función. Si vemos undefined es porque ese objeto no tiene la propiedad nombre. Es decir, no es el objeto que está ejecutando la función.
+// //CUAL SERIA EL PROBLEMA?
+// //This es el objeto que ejecuta la función. Si vemos undefined es porque ese objeto no tiene la propiedad nombre. Es decir, no es el objeto que está ejecutando la función.
 
-//Para solucionar esto, podemos usar bind para asignar el contexto a una función. El binding o enlazamiento es asignar el valor que va a tomar this cuando se ejecute la función.
+// //Para solucionar esto, podemos usar bind para asignar el contexto a una función. El binding o enlazamiento es asignar el valor que va a tomar this cuando se ejecute la función.
 
-const saludarHarry = harry.saludar.bind(harry);
-saludarHarry(); //Retorna Hola, me llamo Harry.
+// const saludarHarry = harry.saludar.bind(harry);
+// saludarHarry(); //Retorna Hola, me llamo Harry.
 
-//TIPOS DE BINDING
+// //TIPOS DE BINDING
 
-//1)DEFAULT BINDING - THIS ES EL OBJETO GLOBAL QUE EN LOS NAVEGADORES ES WINDOW Y EN NODEJS ES EL OBJETO GLOBAL.
+// //1)DEFAULT BINDING - THIS ES EL OBJETO GLOBAL QUE EN LOS NAVEGADORES ES WINDOW Y EN NODEJS ES EL OBJETO GLOBAL.
 
-function quienSoy() {
-  console.log(`Hola yo soy `, this);
-}
+// function quienSoy() {
+//   console.log(`Hola yo soy `, this);
+// }
 
-quienSoy(); //Retorna Hola yo soy Window {...}. En modo estricto en cambio, retorna hola yo soy undefined.
+// quienSoy(); //Retorna Hola yo soy Window {...}. En modo estricto en cambio, retorna hola yo soy undefined.
 
-console.log(this); //También retorna Window {...}. No debe usarse el this en este caso y en todo caso es mejor usar window en vez de this para referirse al objeto global.
+// console.log(this); //También retorna Window {...}. No debe usarse el this en este caso y en todo caso es mejor usar window en vez de this para referirse al objeto global.
 
-//2)Implicit BINDING - Se produce cuando invocamos al método de un objeto. Algo que hacemos todo el tiempo sin ser tan conscientes de lo que pasa por detrás.
+// //2)Implicit BINDING - Se produce cuando invocamos al método de un objeto. Algo que hacemos todo el tiempo sin ser tan conscientes de lo que pasa por detrás.
 
-const sacha = {
-  nombre: 'Sacha',
-  saludar: function () {
-    console.log(`Hola, me llamo ${this.nombre}`);
-  },
-  hermano: {
-    nombre: 'Eric',
-    saludar: function () {
-      console.log(`Yo, el hermano, me llamo ${this.nombre}`);
-    },
-  },
-};
+// const sacha = {
+//   nombre: 'Sacha',
+//   saludar: function () {
+//     console.log(`Hola, me llamo ${this.nombre}`);
+//   },
+//   hermano: {
+//     nombre: 'Eric',
+//     saludar: function () {
+//       console.log(`Yo, el hermano, me llamo ${this.nombre}`);
+//     },
+//   },
+// };
 
-sacha.saludar(); //Retorna Hola, me llamo Sacha.
-sacha.hermano.saludar(); //Retorna Yo, el hermano, me llamo Eric.
+// sacha.saludar(); //Retorna Hola, me llamo Sacha.
+// sacha.hermano.saludar(); //Retorna Yo, el hermano, me llamo Eric.
 
-//3)Explicit BINDING - Sirve para que nosotros elijamos exactamente qué objeto queremos que sea this cuando se ejecuta la función. Está bueno cuando para cuando pasamos métodos como callbacks, como parámetros de otras funciones pero queremos que el this siga enlazado al objeto correcto.
+// //3)Explicit BINDING - Sirve para que nosotros elijamos exactamente qué objeto queremos que sea this cuando se ejecuta la función. Está bueno cuando para cuando pasamos métodos como callbacks, como parámetros de otras funciones pero queremos que el this siga enlazado al objeto correcto.
 
-const chomsky = {
-  nombre: 'Chomsky',
-  saludar: function (gritando, conDespedida) {
-    const saludoNormal = `Hola, me llamo ${this.nombre}`;
-    const despedidaNormal = 'Chau!';
+// const chomsky = {
+//   nombre: 'Chomsky',
+//   saludar: function (gritando, conDespedida) {
+//     const saludoNormal = `Hola, me llamo ${this.nombre}`;
+//     const despedidaNormal = 'Chau!';
 
-    const saludo = gritando ? saludoNormal.toUpperCase() : saludoNormal;
-    const despedida = gritando
-      ? despedidaNormal.toUpperCase()
-      : despedidaNormal;
+//     const saludo = gritando ? saludoNormal.toUpperCase() : saludoNormal;
+//     const despedida = gritando
+//       ? despedidaNormal.toUpperCase()
+//       : despedidaNormal;
 
-    console.log(saludo);
+//     console.log(saludo);
 
-    if (conDespedida) {
-      console.log(despedida);
-    }
-  },
-};
+//     if (conDespedida) {
+//       console.log(despedida);
+//     }
+//   },
+// };
 
-chomsky.saludar(true, true); //RETORNA HOMA, ME LLAMO CHOMSKY y CHAU!
+// chomsky.saludar(true, true); //RETORNA HOMA, ME LLAMO CHOMSKY y CHAU!
 
-//Para llamar a la función saludar pero desde otro contexto usamos CALL, o sea podemos elegir qué cosa va a ser this cuando se ejecute la función.
+// //Para llamar a la función saludar pero desde otro contexto usamos CALL, o sea podemos elegir qué cosa va a ser this cuando se ejecute la función.
 
-const pepe = { name: 'Pepe' };
+// const pepe = { name: 'Pepe' };
 
-chomsky.saludar.call(pepe, true, true); //RETORNA HOMA, ME LLAMO PEPE y CHAU!El this se enlaza al objeto pepe.
+// chomsky.saludar.call(pepe, true, true); //RETORNA HOMA, ME LLAMO PEPE y CHAU!El this se enlaza al objeto pepe.
 
-chomsky.saludar.apply(pepe, [true, true]); //RETORNA LO MISMO PERO CON APPLY.
+// chomsky.saludar.apply(pepe, [true, true]); //RETORNA LO MISMO PERO CON APPLY.
 
-//BIND - Un método de las funciones que nos retorna una nueva función con el contexto enlazado al objeto que le digamos. Nos devuelve una nueva función con el valor de this que nosotros le digamos, pero no la invoca todavía.
+// //BIND - Un método de las funciones que nos retorna una nueva función con el contexto enlazado al objeto que le digamos. Nos devuelve una nueva función con el valor de this que nosotros le digamos, pero no la invoca todavía.
 
-const remy = {
-  nombre: 'Remy',
-  saludar: function () {
-    console.log(`Hola, me llamo ${this.nombre}`);
-  },
-};
+// const remy = {
+//   nombre: 'Remy',
+//   saludar: function () {
+//     console.log(`Hola, me llamo ${this.nombre}`);
+//   },
+// };
 
-const boundSaludar = remy.saludar.bind(remy); //le estoy diciendo que mi objeto al que debe aplicarse el this es remy
+// const boundSaludar = remy.saludar.bind(remy); //le estoy diciendo que mi objeto al que debe aplicarse el this es remy
 
-boundSaludar(); //Retorna Hola, me llamo Remy.
+// boundSaludar(); //Retorna Hola, me llamo Remy.
 
-//ORDENAR UN ARRAY
-const orderedArray = [345, 8, 21, 63].sort((a, b) => a - b); //Retorna [8, 21, 63, 345].
-console.log(orderedArray);
+// //ORDENAR UN ARRAY
+// const orderedArray = [345, 8, 21, 63].sort((a, b) => a - b); //Retorna [8, 21, 63, 345].
+// console.log(orderedArray);
 
-//ORDENAR UN ARRAY DE OBJETOS
-let personas = [
-  { nombre: 'Maite', edad: 28 },
-  { nombre: 'Jorge', edad: 38 },
-  { nombre: 'Lara', edad: 25 },
-  { nombre: 'Cecilia', edad: 29 },
-];
+// //ORDENAR UN ARRAY DE OBJETOS
+// let personas = [
+//   { nombre: 'Maite', edad: 28 },
+//   { nombre: 'Jorge', edad: 38 },
+//   { nombre: 'Lara', edad: 25 },
+//   { nombre: 'Cecilia', edad: 29 },
+// ];
 
-const orderedObject = personas.sort((a, b) => a.edad - b.edad); //Retorna [{ nombre: 'Lara', edad: 25 }, { nombre: 'Cecilia', edad: 29 }, { nombre: 'Jorge', edad: 38 }, { nombre: 'Maite', edad: 28 }].
-console.log(orderedObject);
+// const orderedObject = personas.sort((a, b) => a.edad - b.edad); //Retorna [{ nombre: 'Lara', edad: 25 }, { nombre: 'Cecilia', edad: 29 }, { nombre: 'Jorge', edad: 38 }, { nombre: 'Maite', edad: 28 }].
+// console.log(orderedObject);
 
 //ORDENAR UN ARRAY DE OBJETOS ALFABÉTICAMENTE CUANDO HAY TILDES
 
-const food = ['Pizza', 'Árabe', 'Asiática', 'Hamburguesa', 'Étnica'];
-const orderedFood = food.sort((a, b) => a.localeCompare(b)); //Retorna ['Árabe', 'Asiática', 'Étnica', 'Hamburguesa', 'Pizza'].
+// const food = ['Pizza', 'Árabe', 'Asiática', 'Hamburguesa', 'Étnica'];
+// const orderedFood = food.sort((a, b) => a.localeCompare(b)); //Retorna ['Árabe', 'Asiática', 'Étnica', 'Hamburguesa', 'Pizza'].
 
-console.log(orderedFood);
+// console.log(orderedFood);
 
 //QUE ES EL CALL STACK O PILA DE EJECUCIÓN
+
+//CHECK PANAGRAM (el str contiene todas las letras del abecedario)
+
+// const checkPanagram = (str) => {
+//   const arr = new Array(26).fill(false);
+//   let index;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= 'A' && str[i] <= 'Z') {
+//       index = str.charCodeAt(i) - 'A'.charCodeAt(0);
+//     } else if (str[i] >= 'a' && str[i] <= 'z') {
+//       index = str.charCodeAt(i) - 'a'.charCodeAt(0);
+//     } else {
+//       continue;
+//     }
+
+//     arr[index] = true;
+//   }
+
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (arr[i] === false) return false;
+//   }
+
+//   return true;
+// };
+
+// console.log(checkPanagram('The quick brown fox jumps over a lazy dog'));
+
+//CLOSURE EJEMPLO
+
+const valor = 2;
+function obtenerModulo() {
+  let datos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  return datos.filter((item) => item % valor === 0);
+}
+
+console.log(obtenerModulo()); //Retorna [2, 4, 6, 8, 10]
+
+const crearUsuario = ({ userName, avatar }) => ({
+  id: 1,
+  userName,
+  avatar,
+  cambiarUserName(userName) {
+    this.userName = userName;
+    return this;
+  },
+  cambiarAvatar(url) {
+    // ejecuta logica para obtener el avatar desde la url
+    const nuevoAvatar = obtenerAvtarDesdeUrl(url);
+    this.avatar = nuevoAvatar;
+    return this;
+  },
+});
+
+console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
