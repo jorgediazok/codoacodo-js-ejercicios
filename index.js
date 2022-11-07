@@ -3301,3 +3301,31 @@ const crearUsuario = ({ userName, avatar }) => ({
 });
 
 console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
+
+//FUNCIONES PURAS
+// La función siempre produce el mismo resultado cuando se le dan los mismos argumentos
+// La función no produce efectos secundarios
+
+// Por ejemplo, esto NO es una función pura:
+
+let previousName = 'David';
+function greet(name) {
+  if (previousName !== name) {
+    console.log(`Hello, ${name}!`);
+  } else {
+    console.log(`Welcome back, ${name}!`);
+  }
+  previousName = name;
+}
+
+console.log(greet('Jorge')); // Welcome back, David!
+
+//HOISTING
+console.log(nombre);
+var nombre = 'jorge';
+
+console.log(nombreDos);
+let nombreDos = 'maluma';
+
+console.log(nombreTres);
+const nombreTres = 'manchester';
